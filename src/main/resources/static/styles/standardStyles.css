@@ -1,0 +1,65 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.header{
+    background-image: url("../images/oen.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header h1{
+    background: mediumseagreen;
+    align-self: center;
+    font-family: "Malgun Gothic Semilight";
+    font-size:75px;
+    color: black;
+    text-align: center;
+    border-radius: 20px;
+    opacity: 90%;
+}
+
+.top-container{
+    justify-content: space-evenly;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+}
+
+.left-box{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    background: black;
+    flex-direction: column;
+    width: 20%;
+    height: 600px;
+}
+
+.input-field{
+    align-self: center;
+    background: red;
+    width: 80%;
+    height: 15%;
+}
+
+.rute-information{
+    align-self: center;
+    background: mediumseagreen;
+    width: 80%;
+    height: 75%;
+}
+
+.map{
+    background: blue;
+    width: 65%;
+    height: 600px;
+}
+
+
+

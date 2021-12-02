@@ -1,4 +1,4 @@
-package com.dat20b.demo.view;
+package com.dat20b.demo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
