@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/standardStyles.css}" rel="stylesheet">
+    <!--- Leaflet css med styling til kortet. --->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin="">
+    </script>
+</head>
+<body>
+    <section class="header">
+        <h1>Christiansø Tour</h1>
+    </section>
+    <section class="top-container">
+        <section class="left-box">
+            <section class="input-field">
+                <form>
+                    <label for="interests">Choose an interest:</label>
+                    <select id="interests" name="interests">
+                        <option value="Nature">Nature</option>
+                        <option value="History">History</option>
+                        <option value="Animals">Animals</option>
+                    </select>
+                    <label for="depature"></label>
+                    <input id="depature" name="depature" type="time">
+                </form>
+            </section>
+            <section class="rute-info-box">
+                <div class="route-info">Denne rute er glimrende for...</div>
+                <div class="timer">40:59</div>
+            </section>
+        </section>
+        <section class="map" id="map"></section>
+    </section>
+    <section class="bottom-container"></section>
+    <section class="footer">
+        <small></small>
+    </section>
+    <script>
+        // Kort bliver lavet. x-y koordinator og zoom sættes på. L for Leaflet.
+        const map = L.map('map').setView([55.3203, 15.1892], 15);
+
+        <!-- copyright til OpenStreetMap -->
+        const attribution =
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributers';
+
+        const tileURL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tiles = L.tileLayer(tileURL, { attribution });
+        tiles.addTo(map);
+        <!--L.marker([55.3203, 15.1892]).addTo(map)-->
+    </script>
+</body>
+</html>
