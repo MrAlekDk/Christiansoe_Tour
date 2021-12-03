@@ -37,7 +37,7 @@ class LokationRepositoryTest {
             testTable.add(lok3);
             testTable.add(lok4);
 
-            Mockito.when(lokationRepository.findById(1))
+            Mockito.when(lokationRepository.findById(1));
         }
 
         @Override
