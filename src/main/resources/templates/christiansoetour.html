@@ -79,7 +79,7 @@
 
         <!-- Tilføje markers til kortet -->
         const ship = L.marker([55.32073, 15.18600], {icon: shipIcon}).addTo(map).bindTooltip("Ship");
-        const user = L.marker([55.3203, 15.1892], {icon: userIcon}).addTo(map).bindTooltip("You");
+        const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindTooltip("You");
 
         <!-- Måle afstanden fra brugeren til skibet med leaflet -->
         measuredDistance = user.getLatLng().distanceTo(ship.getLatLng());
@@ -87,19 +87,38 @@
 
         <!-- Timer -->
         document.getElementById("startButton").onclick = (e) => {
+            <!-- Opret dato for idag med den indtastede afgangstid -->
+            let departTime = document.getElementById("depature").valueAsDate;
+            let date = new Date()
+            let today = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+            let departureTime = (departTime.getHours()-1) + ':' + departTime.getMinutes() + ':' + departTime.getSeconds();
+            let timeLeft = today + " " + departureTime;
+            let timer = new Date(timeLeft)
+
             document.getElementById("startButton").remove();
-            let countDownTime = new Date();
-            countDownTime.setTime(countDownTime.getTime() + (3 * 60 * 60 * 1000));
+
             let x = setInterval(function () {
                 let timeNow = new Date();
-                let distance = countDownTime - timeNow;
-
+                let distance = timer - timeNow;
+                <!-- Udregning af tidsforskellen -->
                 let hourDifference = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 let minuteDifference = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 let secondDifference = Math.floor((distance % (1000 * 60)) / 1000);
+                <!-- Design logik -->
+                if (hourDifference<10){
+                    hourDifference = "0" + hourDifference;
+                }
+                if (minuteDifference<10){
+                    minuteDifference = "0" + minuteDifference;
+                }
+                if (secondDifference<10){
+                    secondDifference = "0" + secondDifference;
+                }
+
                 document.getElementById("timer").innerHTML = hourDifference + ":" + minuteDifference + ":" + secondDifference;
 
-                if (minuteDifference < 10) {
+                <!-- Meddelser til brugeren -->
+                if (hourDifference===0 && minuteDifference < 10) {
                     document.getElementById("timer").innerHTML = "Båden sejler snart\n " + hourDifference + ":" + minuteDifference + ":" + secondDifference;
                 }
 
