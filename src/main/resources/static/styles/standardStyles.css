@@ -76,7 +76,7 @@ html{
 .route-info{
     align-self: center;
     height: 75%;
-    width: 80%;
+    width: 100%;
     background: white;
     text-align: center;
     font-size: 40px;
@@ -87,7 +87,7 @@ html{
 .timer{
     align-self: center;
     height: 20%;
-    width: 80%;
+    width: 100%;
     background: white;
     text-align: center;
     font-size: 40px;
