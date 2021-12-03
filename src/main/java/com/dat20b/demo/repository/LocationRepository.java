@@ -1,8 +1,10 @@
 package com.dat20b.demo.repository;
 
-import com.dat20b.demo.model.location;
+import com.dat20b.demo.model.Location;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface LocationRepository extends CrudRepository<location, Integer> {
+@Repository
+public interface LocationRepository extends CrudRepository<Location, Integer> {
 
 }
