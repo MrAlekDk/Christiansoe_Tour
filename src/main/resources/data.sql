@@ -1,5 +1,5 @@
 INSERT INTO locations(id,name,description,lat,long)
-VALUES(1,'Danmarks østligste punkt','Lige her, befinder danmarks mest østliggende punkt sig. Waow!',55.32204970983975,15.190267993402822),
+VALUES(1,'Danmarks østligste punkt','Lige her, befinder danmarks mest østliggende punkt sig. Waow!',55.32006234338913,15.192730307766347),
 (2,'Hertugindens Bastion','mangler tekst',55.32220804010796,15.190300179911),
 (3,'Rantzaus Bastion','mangler tekst',55.32220804010796,15.190300179911),
 (4,'Hestehytten','mangler tekst',55.32248349511562,15.187628699732167),
