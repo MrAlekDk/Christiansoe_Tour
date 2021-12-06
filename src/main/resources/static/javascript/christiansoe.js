@@ -111,22 +111,15 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         measuredDistance()
     }
 
+    <!-----------ATTRACTION MODAL-------->
 
+//Get modal
+const myModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
 
-    /*document.getElementById("map").addEventListener("click", function (){
-         const idForLocationToFind = document.getElementById("location-id").value
-     }*/
+//Get button
+let attractionButton = document.getElementById("attraction-btn")
 
-
-    /*const URL = "http://localhost:8080/location";
-    document.getElementById("map").addEventListener("map") = (evt) => {
-        evt.preventDefault()
-        const idForLocationToFind = document.getElementById("location-id").value
-        fetch(URL + "/" + idForUserToFind)
-            .then(res => {
-                if (res.status == 404) {
-                    throw `Location with ID ${idForLocationToFind} not found`
-                }
-                return res.json()
-            })
-    }*/
+//Logic for button to show modal
+attractionButton.onclick = function(){
+        myModal.show()
+}

@@ -3,6 +3,7 @@ package com.dat20b.demo.model;
 import com.sun.xml.bind.v2.runtime.Coordinator;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -27,10 +28,8 @@ public class Location {
     @Column(name = "long",nullable = false)
     private double longitude;
 
-      /*@OneToMany
-    @JoinColumn(name = "attraction_id")
-    private List<attraction>;
-    */
+    @OneToMany
+    private List<Attraction> attractionList;
 
 
     public Location(){}

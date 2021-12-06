@@ -58,7 +58,7 @@ class AttractionServiceTest {
         List<Attraction> testList;
 
         //act
-        testList = attractionService.getAttractions();
+        testList = attractionService.getAllAttractions();
 
         //assert
         assertEquals(4, testList.size());

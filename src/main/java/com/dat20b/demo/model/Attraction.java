@@ -25,8 +25,9 @@ public class Attraction {
 
     private String sound;
 
-   /* @ManyToOne
-    private Location location;*/
+   @ManyToOne
+   @JoinColumn(name = "attraction_id")
+    private Location location;
 
     public Attraction(){
     }

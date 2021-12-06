@@ -15,10 +15,10 @@ public class AttractionService {
         this.attractionRepository = attractionRepository;
     }
 
-    public List<Attraction> getAttractions() {
+    public List<Attraction> getAllAttractions() {
         List<Attraction> allAttractions = new ArrayList<Attraction>();
         attractionRepository.findAll().forEach(allAttractions::add);
         return allAttractions;
-    }
+}
 }
 
