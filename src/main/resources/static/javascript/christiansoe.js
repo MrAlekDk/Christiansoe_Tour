@@ -90,6 +90,7 @@ document.getElementById("startButton").onclick = (e) => {
             })
     }
 fetchLocations();
+
     /*document.getElementById("map").addEventListener("click", function (){
          const idForLocationToFind = document.getElementById("location-id").value
      }*/
