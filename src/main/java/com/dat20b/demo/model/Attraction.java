@@ -1,8 +1,5 @@
 package com.dat20b.demo.model;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-import org.springframework.data.geo.Point;
-
 import javax.persistence.*;
 import java.time.Duration;
 import java.time.LocalDate;
