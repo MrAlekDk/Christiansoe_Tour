@@ -28,8 +28,10 @@ const ship = L.marker([55.32073, 15.18600], {icon: shipIcon}).addTo(map).bindToo
 const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindTooltip("You");
 
     <!-- Måle afstanden fra brugeren til skibet med leaflet -->
-    measuredDistance = user.getLatLng().distanceTo(ship.getLatLng());
-    document.getElementById("distance").innerHTML = measuredDistance.toFixed(0) + " Meter";
+    function measuredDistance(){
+        distance = user.getLatLng().distanceTo(ship.getLatLng());
+        document.getElementById("distance").innerHTML = distance.toFixed(0) + " Meter";
+    }
 
     <!-- Timer -->
     document.getElementById("startButton").onclick = (e) => {
@@ -79,17 +81,18 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
     const URL = "http://localhost:8080/lokationer";
     let locations = []
 
-    function fetchLocationMarkers() {
+    function fetchLocations() {
         fetch(URL)
             .then(res => res.json())
             .then(data=> {
                 locations = data
                 createMarkers()
+                setUserLocation(user, locations[4])
                 console.log(data);
             })
     }
 
-    fetchLocationMarkers()
+    fetchLocations()
 
     function createMarkers(){
         let markers = locations;
@@ -102,6 +105,12 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
 
         }
     }
+
+    function setUserLocation(user, location){
+        user.setLatLng([location.coordinates.x, location.coordinates.y])
+        measuredDistance()
+    }
+
 
 
     /*document.getElementById("map").addEventListener("click", function (){
