@@ -3,7 +3,7 @@ const map = L.map('map').setView([55.3203, 15.1892], 16);
 
 <!-- copyright til OpenStreetMap -->
 const attribution =
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributers';
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 
 <!-- Tilføje tiles til vores map -->
 const tileURL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -26,14 +26,13 @@ var userIcon = L.icon({
 <!-- Tilføje markers til kortet -->
 const ship = L.marker([55.32073, 15.18600], {icon: shipIcon}).addTo(map).bindTooltip("Ship");
 const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindTooltip("You");
-const oest = L.marker([55.32006234338913, 15.192730307766347]).addTo(map).bindTooltip("Danmarks østligste punkt");
 
-<!-- Måle afstanden fra brugeren til skibet med leaflet -->
-measuredDistance = user.getLatLng().distanceTo(ship.getLatLng());
-document.getElementById("distance").innerHTML = measuredDistance.toFixed(0) + " Meter";
+    <!-- Måle afstanden fra brugeren til skibet med leaflet -->
+    measuredDistance = user.getLatLng().distanceTo(ship.getLatLng());
+    document.getElementById("distance").innerHTML = measuredDistance.toFixed(0) + " Meter";
 
-<!-- Timer -->
-document.getElementById("startButton").onclick = (e) => {
+    <!-- Timer -->
+    document.getElementById("startButton").onclick = (e) => {
     <!-- Opret dato for idag med den indtastede afgangstid -->
     let departTime = document.getElementById("depature").valueAsDate;
     let date = new Date()
@@ -76,20 +75,34 @@ document.getElementById("startButton").onclick = (e) => {
         }
     }, 1000);
 }
-
     //fetch locations
     const URL = "http://localhost:8080/lokationer";
     let locations = []
 
-    function fetchLocations() {
+    function fetchLocationMarkers() {
         fetch(URL)
             .then(res => res.json())
             .then(data=> {
                 locations = data
+                createMarkers()
                 console.log(data);
             })
     }
-fetchLocations();
+
+    fetchLocationMarkers()
+
+    function createMarkers(){
+        let markers = locations;
+        for (let i = 0; i < markers.length; i++) {
+            let x = markers[i].coordinates.x;
+            let y = markers[i].coordinates.y;
+            let name = markers[i].name;
+
+            L.marker([x , y]).addTo(map).bindTooltip(name);
+
+        }
+    }
+
 
     /*document.getElementById("map").addEventListener("click", function (){
          const idForLocationToFind = document.getElementById("location-id").value
