@@ -25,13 +25,13 @@ public class Attraction {
 
     private String sound;
 
-    @ManyToOne
-    private Location location;
+   /* @ManyToOne
+    private Location location;*/
 
     public Attraction(){
     }
 
-    public Attraction(int attraction_id, String name, String description, Duration time, LocalDate activeSeason, String photo, String sound, Location location) {
+    public Attraction(int attraction_id, String name, String description, Duration time, LocalDate activeSeason, String photo, String sound) {
         this.attraction_id = attraction_id;
         this.name = name;
         this.description = description;
@@ -39,7 +39,6 @@ public class Attraction {
         this.activeSeason = activeSeason;
         this.photo = photo;
         this.sound = sound;
-        this.location = location;
     }
 
     public int getAttraction_id() {
