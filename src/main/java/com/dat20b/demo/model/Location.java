@@ -1,8 +1,11 @@
 package com.dat20b.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.xml.bind.v2.runtime.Coordinator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,8 +31,9 @@ public class Location {
     @Column(name = "long",nullable = false)
     private double longitude;
 
-    @OneToMany
-    private List<Attraction> attractionList;
+    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
+    @JsonManagedReference("attractions")
+    private List<Attraction> attractionList = new ArrayList<>();
 
 
     public Location(){}
@@ -43,6 +47,13 @@ public class Location {
         this.attractionList = attractionList;
     }
 
+    public List<Attraction> getAttractionList() {
+        return attractionList;
+    }
+
+    public void setAttractionList(List<Attraction> attractionList) {
+        this.attractionList = attractionList;
+    }
 
     public int getLocationID() {
         return locationID;
