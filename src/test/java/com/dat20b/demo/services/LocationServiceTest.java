@@ -1,5 +1,6 @@
 package com.dat20b.demo.services;
 
+import com.dat20b.demo.model.Attraction;
 import com.dat20b.demo.model.Coordinates;
 import com.dat20b.demo.repository.LocationRepository;
 import com.dat20b.demo.model.Location;
@@ -10,7 +11,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import java.awt.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -35,19 +38,24 @@ class LocationServiceTest {
         Coordinates koor3 = new Coordinates(34, 71);
         Coordinates koor4 = new Coordinates(572, 679);
 
-        Location lok1 = new Location(1, "Bjørnehulen", "Her bor bjørnen", koor1);
-        Location lok2 = new Location(2, "Kirken", "Her er kirken", koor2);
-        Location lok3 = new Location(3, "Slottet", "Her er slottet", koor3);
-        Location lok4 = new Location(4, "Kontoret", "Her er kontoret", koor4);
+        Duration d = Duration.between(LocalTime.NOON, LocalTime.MAX);
+        LocalDate date = LocalDate.now();
 
-        ArrayList<Location> testTable = new ArrayList<Location>();
+        ArrayList<Attraction> attractionTestTable = new ArrayList<Attraction>();
 
-        testTable.add(lok1);
-        testTable.add(lok2);
-        testTable.add(lok3);
-        testTable.add(lok4);
+        Location lok1 = new Location(1, "Bjørnehulen", "Her bor bjørnen", koor1, attractionTestTable);
+        Location lok2 = new Location(2, "Kirken", "Her er kirken", koor2, attractionTestTable);
+        Location lok3 = new Location(3, "Slottet", "Her er slottet", koor3, attractionTestTable);
+        Location lok4 = new Location(4, "Kontoret", "Her er kontoret", koor4, attractionTestTable);
 
-        Mockito.when(locationRepository.findAll()).thenReturn(testTable);
+        ArrayList<Location> locationTestTable = new ArrayList<Location>();
+
+        locationTestTable.add(lok1);
+        locationTestTable.add(lok2);
+        locationTestTable.add(lok3);
+        locationTestTable.add(lok4);
+
+        Mockito.when(locationRepository.findAll()).thenReturn(locationTestTable);
 
         //Mockito.when(locationRepository.findById(1)).thenReturn(lok1);
     }
@@ -64,6 +72,5 @@ class LocationServiceTest {
         assertEquals(4, testList.size());
         Mockito.verify(locationRepository, times(1)).findAll();
     }
-
 
 }

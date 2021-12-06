@@ -34,12 +34,13 @@ public class Location {
 
     public Location(){}
 
-    public Location(int lokationID, String navn, String beskrivelse, Coordinates koordinater) {
+    public Location(int lokationID, String navn, String beskrivelse, Coordinates koordinater, List<Attraction> attractionList) {
         this.locationID = lokationID;
         this.name = navn;
         this.description = beskrivelse;
         this.longitude = koordinater.getX();
         this.lattitude = koordinater.getY();
+        this.attractionList = attractionList;
     }
 
 
@@ -75,5 +76,13 @@ public class Location {
     public void setCoordinates(Coordinates koordinater) {
         lattitude = koordinater.getX();
         longitude = koordinater.getY();
+    }
+
+    public List<Attraction> getAttractionList() {
+        return attractionList;
+    }
+
+    public void setAttractionList(List<Attraction> attractionList) {
+        this.attractionList = attractionList;
     }
 }
