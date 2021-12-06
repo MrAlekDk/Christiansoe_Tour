@@ -37,8 +37,8 @@ document.getElementById("startButton").onclick = (e) => {
     <!-- Opret dato for idag med den indtastede afgangstid -->
     let departTime = document.getElementById("depature").valueAsDate;
     let date = new Date()
-    let today = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
-    let departureTime = (departTime.getHours()-1) + ':' + departTime.getMinutes() + ':' + departTime.getSeconds();
+    let today = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    let departureTime = (departTime.getHours() - 1) + ':' + departTime.getMinutes() + ':' + departTime.getSeconds();
     let timeLeft = today + " " + departureTime;
     let timer = new Date(timeLeft)
 
@@ -52,20 +52,20 @@ document.getElementById("startButton").onclick = (e) => {
         let minuteDifference = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         let secondDifference = Math.floor((distance % (1000 * 60)) / 1000);
         <!-- Design logik -->
-        if (hourDifference<10){
+        if (hourDifference < 10) {
             hourDifference = "0" + hourDifference;
         }
-        if (minuteDifference<10){
+        if (minuteDifference < 10) {
             minuteDifference = "0" + minuteDifference;
         }
-        if (secondDifference<10){
+        if (secondDifference < 10) {
             secondDifference = "0" + secondDifference;
         }
 
         document.getElementById("timer").innerHTML = hourDifference + ":" + minuteDifference + ":" + secondDifference;
 
         <!-- Meddelser til brugeren -->
-        if (hourDifference==="00" && minuteDifference < 10) {
+        if (hourDifference === "00" && minuteDifference < 10) {
             document.getElementById("timer").innerHTML = "Båden sejler snart\n " + hourDifference + ":" + minuteDifference + ":" + secondDifference;
         }
 
@@ -75,6 +75,7 @@ document.getElementById("startButton").onclick = (e) => {
             map.removeLayer(ship)
         }
     }, 1000);
+}
 
     //fetch locations
     const URL = "http://localhost:8080/lokationer";
@@ -88,9 +89,7 @@ document.getElementById("startButton").onclick = (e) => {
                 console.log(data);
             })
     }
-
-    fetchLocations()
-
+fetchLocations();
     /*document.getElementById("map").addEventListener("click", function (){
          const idForLocationToFind = document.getElementById("location-id").value
      }*/
@@ -108,4 +107,3 @@ document.getElementById("startButton").onclick = (e) => {
                 return res.json()
             })
     }*/
-}
