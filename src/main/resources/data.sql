@@ -1,5 +1,6 @@
 INSERT INTO locations(id,name,description,lat,long)
-VALUES(1,'Danmarks østligste punkt','Lige her, befinder danmarks mest østliggende punkt sig!',55.32006234338913,15.192730307766347),
+VALUES
+(1,'Danmarks østligste punkt','Lige her, befinder danmarks mest østliggende punkt sig!',55.32006234338913,15.192730307766347),
 (2,'Hertugindens Bastion','En af bastionerne i den Nord-østlige del af Christiansø',55.32220804010796,15.190300179911),
 (3,'Rantzaus Bastion','Historisk mindesmærke på Christiansø',55.32220804010796,15.190300179911),
 (4,'Hestehytten','Hestehytten er en af øens soldaterhytter, som Christiansø Administration råder over til udlejning.',55.32248349511562,15.187628699732167),
@@ -24,3 +25,9 @@ VALUES(1,'Danmarks østligste punkt','Lige her, befinder danmarks mest østligge
 (23,'Ruths Sild','Christiansøs bedste sild (og de eneste)',55.31981467117548,15.185251324440898),
 (24,'Bådsmandsboden','Bådmændenes bod',55.322044715543946,15.184508352543773),
 (25,'Christiansø Museum-vest','Det ene af de to museer',55.32204786307992,15.183754651);
+
+
+INSERT INTO attractions (attraction_id,name,location_id)
+VALUES
+(1,'Test seværdighed til Danmarks østligste punkt',1),
+(2,'Test seværdighed til Christiansø museum-vest',25);

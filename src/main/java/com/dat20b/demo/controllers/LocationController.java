@@ -1,6 +1,9 @@
 package com.dat20b.demo.controllers;
 
+import com.dat20b.demo.model.Attraction;
 import com.dat20b.demo.model.Location;
+import com.dat20b.demo.repository.AttractionRepository;
+import com.dat20b.demo.repository.LocationRepository;
 import com.dat20b.demo.services.LocationService;
 
 import org.springframework.http.HttpStatus;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -29,6 +33,5 @@ public class LocationController {
         List<Location> allLocations = locationsService.getAllLocations();
         return ResponseEntity.status(HttpStatus.OK).body(allLocations);
     }
-
 
 }
