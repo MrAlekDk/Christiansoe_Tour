@@ -75,4 +75,37 @@ document.getElementById("startButton").onclick = (e) => {
             map.removeLayer(ship)
         }
     }, 1000);
+
+    //fetch locations
+    const URL = "http://localhost:8080/lokationer";
+    let locations = []
+
+    function fetchLocations() {
+        fetch(URL)
+            .then(res => res.json())
+            .then(data=> {
+                locations = data
+                console.log(data);
+            })
+    }
+
+    fetchLocations()
+
+    /*document.getElementById("map").addEventListener("click", function (){
+         const idForLocationToFind = document.getElementById("location-id").value
+     }*/
+
+
+    /*const URL = "http://localhost:8080/location";
+    document.getElementById("map").addEventListener("map") = (evt) => {
+        evt.preventDefault()
+        const idForLocationToFind = document.getElementById("location-id").value
+        fetch(URL + "/" + idForUserToFind)
+            .then(res => {
+                if (res.status == 404) {
+                    throw `Location with ID ${idForLocationToFind} not found`
+                }
+                return res.json()
+            })
+    }*/
 }

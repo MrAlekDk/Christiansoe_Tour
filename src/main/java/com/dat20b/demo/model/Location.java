@@ -3,8 +3,6 @@ package com.dat20b.demo.model;
 import com.sun.xml.bind.v2.runtime.Coordinator;
 
 import javax.persistence.*;
-import java.awt.*;
-import java.time.LocalDate;
 
 
 @Entity
