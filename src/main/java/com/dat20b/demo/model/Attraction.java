@@ -1,7 +1,6 @@
 package com.dat20b.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -22,29 +21,31 @@ public class Attraction {
 
     private Duration time;
 
-    private LocalDate activeSeason;
+    private LocalDate activeSeasonStart;
+
+    private LocalDate activeSeasonEnd;
 
     private String photo;
 
     private String sound;
 
-   @ManyToOne()
-   @JsonBackReference(value = "attractions")
-   @JoinColumn(name = "location_id", referencedColumnName = "id")
+    @ManyToOne
+    @JsonBackReference(value = "attractions")
+    @JoinColumn(name = "location_id", referencedColumnName = "id")
     private Location location;
 
-    public Attraction(){
+    public Attraction() {
     }
 
-    public Attraction(int attraction_id, String name, String description, Duration time, LocalDate activeSeason, String photo, String sound, Location location) {
+    public Attraction(int attraction_id, String name, String description, Duration time, LocalDate activeSeasonStart, LocalDate activeSeasonEnd, String photo, String sound) {
         this.attraction_id = attraction_id;
         this.name = name;
         this.description = description;
         this.time = time;
-        this.activeSeason = activeSeason;
+        this.activeSeasonStart = activeSeasonStart;
+        this.activeSeasonEnd = activeSeasonEnd;
         this.photo = photo;
         this.sound = sound;
-        this.location = location;
     }
 
     public int getAttraction_id() {
@@ -63,6 +64,7 @@ public class Attraction {
         this.name = name;
     }
 
+
     public String getDescription() {
         return description;
     }
@@ -79,12 +81,20 @@ public class Attraction {
         this.time = time;
     }
 
-    public LocalDate getActiveSeason() {
-        return activeSeason;
+    public LocalDate getActiveSeasonStart() {
+        return activeSeasonStart;
     }
 
-    public void setActiveSeason(LocalDate activeSeason) {
-        this.activeSeason = activeSeason;
+    public void setActiveSeasonStart(LocalDate activeSeasonStart) {
+        this.activeSeasonStart = activeSeasonStart;
+    }
+
+    public LocalDate getActiveSeasonEnd() {
+        return activeSeasonEnd;
+    }
+
+    public void setActiveSeasonEnd(LocalDate activeSeasonEnd) {
+        this.activeSeasonEnd = activeSeasonEnd;
     }
 
     public String getPhoto() {
@@ -102,6 +112,7 @@ public class Attraction {
     public void setSound(String sound) {
         this.sound = sound;
     }
+
 
     public Location getLocation() {
         return location;

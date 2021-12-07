@@ -35,7 +35,10 @@ class AttractionServiceTest {
 
         //Duration and Localdate for attractions
         Duration d = Duration.between(LocalTime.NOON, LocalTime.MAX);
-        LocalDate date = LocalDate.now();
+
+
+        LocalDate dateStart = LocalDate.of(2021,1,1);
+        LocalDate dateEnd = LocalDate.of(2021,5,1);
 
         //Coordinates for a location
         Coordinates koor1 = new Coordinates(3, 6);
@@ -47,13 +50,13 @@ class AttractionServiceTest {
         ArrayList<Attraction> attractionTestTable = new ArrayList<Attraction>();
 
         //Locations for
-        Location lok1 = new Location(1, "Bjørnehulen", "Her bor bjørnen", koor1, attractionTestTable);
+        Location lok1 = new Location(1, "Bjørnehulen", "Her bor bjørnen", koor1);
 
         //Attractions
-        Attraction att1 = new Attraction(1, "Slottet", "Det gamle slot er bygget i 1900", d, date, "URLTilBillede", "URLTilLyd", lok1);
-        Attraction att2 = new Attraction(2, "Slottet", "Det gamle slot er bygget i 1900", d, date, "URLTilBillede", "URLTilLyd", lok1);
-        Attraction att3 = new Attraction(3, "Slottet", "Det gamle slot er bygget i 1900", d, date, "URLTilBillede", "URLTilLyd", lok1);
-        Attraction att4 = new Attraction(4, "Slottet", "Det gamle slot er bygget i 1900", d, date, "URLTilBillede", "URLTilLyd",lok1);
+        Attraction att1 = new Attraction(1, "Slottet", "Det gamle slot er bygget i 1900", d, dateStart, dateEnd, "URLTilBillede", "URLTilLyd");
+        Attraction att2 = new Attraction(2, "Slottet", "Det gamle slot er bygget i 1900", d, dateStart, dateEnd, "URLTilBillede", "URLTilLyd");
+        Attraction att3 = new Attraction(3, "Slottet", "Det gamle slot er bygget i 1900", d, dateStart, dateEnd, "URLTilBillede", "URLTilLyd");
+        Attraction att4 = new Attraction(4, "Slottet", "Det gamle slot er bygget i 1900", d, dateStart, dateEnd, "URLTilBillede", "URLTilLyd");
 
         attractionTestTable.add(att1);
         attractionTestTable.add(att2);

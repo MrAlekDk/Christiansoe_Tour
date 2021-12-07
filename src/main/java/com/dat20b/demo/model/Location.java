@@ -38,13 +38,12 @@ public class Location {
 
     public Location(){}
 
-    public Location(int lokationID, String navn, String beskrivelse, Coordinates koordinater, List<Attraction> attractionList) {
+    public Location(int lokationID, String navn, String beskrivelse, Coordinates koordinater) {
         this.locationID = lokationID;
         this.name = navn;
         this.description = beskrivelse;
         this.longitude = koordinater.getX();
         this.lattitude = koordinater.getY();
-        this.attractionList = attractionList;
     }
 
     public int getLocationID() {

@@ -1,24 +1,28 @@
 package com.dat20b.demo.services;
 
 import com.dat20b.demo.model.Attraction;
-import com.dat20b.demo.model.Location;
-import reactor.core.Scannable;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 
 public class Sort {
 
-    public List<Attraction> getAllActiveAttractions(Location location) {
+    public Sort() {
+    }
 
-        List<Attraction> attractionList = location.getAttractionList();
-        List<Attraction> sortedAttractionList = new ArrayList<>();
 
-        for (int i = 0; i < attractionList.size(); i++) {
-            if (attractionList.get(i).getLocation().getLocationID() == location.getLocationID()) {
-                sortedAttractionList.add(attractionList.get(i));
-            }
-        }
-        return sortedAttractionList;
+    public List<Attraction> sortActiveAttractions(List<Attraction> allAttractions) {
+
+        allAttractions.removeIf(this::checkIfInActiveSeason);
+        return allAttractions;
+    }
+
+    private boolean checkIfInActiveSeason(Attraction attraction) {
+        Month monthNow = LocalDate.now().getMonth();
+        Month monthStart = attraction.getActiveSeasonStart().getMonth();
+        Month monthEnd = attraction.getActiveSeasonEnd().getMonth();
+
+        return monthNow.getValue() >= monthStart.getValue() && monthNow.getValue() <= monthEnd.getValue();
     }
 }
