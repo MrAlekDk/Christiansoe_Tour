@@ -43,10 +43,10 @@ class LocationServiceTest {
 
         ArrayList<Attraction> attractionTestTable = new ArrayList<Attraction>();
 
-        Location lok1 = new Location(1, "Bjørnehulen", "Her bor bjørnen", koor1, attractionTestTable);
-        Location lok2 = new Location(2, "Kirken", "Her er kirken", koor2, attractionTestTable);
-        Location lok3 = new Location(3, "Slottet", "Her er slottet", koor3, attractionTestTable);
-        Location lok4 = new Location(4, "Kontoret", "Her er kontoret", koor4, attractionTestTable);
+        Location lok1 = new Location(1, "Bjørnehulen", "Her bor bjørnen", koor1);
+        Location lok2 = new Location(2, "Kirken", "Her er kirken", koor2);
+        Location lok3 = new Location(3, "Slottet", "Her er slottet", koor3);
+        Location lok4 = new Location(4, "Kontoret", "Her er kontoret", koor4);
 
         ArrayList<Location> locationTestTable = new ArrayList<Location>();
 
