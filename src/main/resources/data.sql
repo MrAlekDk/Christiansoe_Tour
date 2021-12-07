@@ -59,7 +59,8 @@ Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivend
 (20,'Loppemarked i loppehytten', 'Et stort loppemarked for christiansø i Februar måned', 10, '2021-02-01', '2021-02-29', '/test/path/picture', '/test/path/sound', 15),
 (21,'Vestre længe fremvisning', 'Beboerne i vestre længe byder dig velkommen, så du kan opleve hvordan det er at bo i et tæt bofællesskab.', 10, '2021-06-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 17),
 (22,'Museums dage i december', 'Det går helt amok med museums dagene', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 8),
-(23,'Hør sirener i sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 8),
+(23,'Pokémon på Christiansø!?!', 'Man skulle ikke tro det, men flere pokemon eksperter har sagt at pokemon fra Christiansø er bedre end resten af Danmark! Vores gym her ved teltpladsen er kun for pokemon masters.',
+ 30, '2021-02-05', '2021-10-02', '/test/path/picture', '/test/path/sound', 21),
 (24,'Hør sirener i sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 8),
 (25,'Hør sirener i sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 8);
 
