@@ -1,6 +1,7 @@
 package com.dat20b.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.time.Duration;
@@ -17,17 +18,17 @@ public class Attraction {
 
     private String name;
 
-   // private String description;
+    private String description;
 
-   // private Duration time;
+    private Duration time;
 
-   // private LocalDate activeSeason;
+    private LocalDate activeSeason;
 
-    //private String photo;
+    private String photo;
 
-    //private String sound;
+    private String sound;
 
-   @ManyToOne
+   @ManyToOne()
    @JsonBackReference(value = "attractions")
    @JoinColumn(name = "location_id", referencedColumnName = "id")
     private Location location;
@@ -38,14 +39,11 @@ public class Attraction {
     public Attraction(int attraction_id, String name, String description, Duration time, LocalDate activeSeason, String photo, String sound, Location location) {
         this.attraction_id = attraction_id;
         this.name = name;
-        /*
         this.description = description;
         this.time = time;
         this.activeSeason = activeSeason;
         this.photo = photo;
         this.sound = sound;
-
-         */
         this.location = location;
     }
 
@@ -64,7 +62,7 @@ public class Attraction {
     public void setName(String name) {
         this.name = name;
     }
-/*
+
     public String getDescription() {
         return description;
     }
@@ -105,8 +103,6 @@ public class Attraction {
         this.sound = sound;
     }
 
-
- */
     public Location getLocation() {
         return location;
     }

@@ -103,8 +103,10 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
             let x = markers[i].coordinates.x;
             let y = markers[i].coordinates.y;
             let name = markers[i].name;
+            let id = markers[i].locationID;
 
-            L.marker([x , y]).addTo(map).bindTooltip(name);
+            let marker = L.marker([x , y]).on('click', clickMarkersHandler).addTo(map).bindTooltip(name)
+            marker.locationID = id;
 
         }
     }
@@ -113,8 +115,6 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         user.setLatLng([location.coordinates.x, location.coordinates.y])
         measuredDistance()
     }
-
-
 
     // Tjek om der er hul igennem til geolocation
     if ('geolocation' in navigator){
@@ -130,20 +130,23 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         console.log('geolocation is not available')
     }
 
-    /*document.getElementById("map").addEventListener("click", function (){
-         const idForLocationToFind = document.getElementById("location-id").value
-     }*/
+    //Making a modal out of HTML element
+    const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
+
+    function clickMarkersHandler(event) {
+        //event.preventDefault()
+        //event.stopPropagation()
+
+        console.log(event.locationID)
+
+    }
+
+    function setUpHandlers(){
+        document.getElementById("map").onclick = clickMarkersHandler
+    }
+
+    setUpHandlers()
 
 
-    /*const URL = "http://localhost:8080/location";
-    document.getElementById("map").addEventListener("map") = (evt) => {
-        evt.preventDefault()
-        const idForLocationToFind = document.getElementById("location-id").value
-        fetch(URL + "/" + idForUserToFind)
-            .then(res => {
-                if (res.status == 404) {
-                    throw `Location with ID ${idForLocationToFind} not found`
-                }
-                return res.json()
-            })
-    }*/
+
+
