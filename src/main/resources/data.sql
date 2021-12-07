@@ -27,10 +27,10 @@ VALUES
 (25,'Christiansø Museum-vest','Det ene af de to museer',55.32204786307992,15.183754651);
 
 
-INSERT INTO attractions (id,name,location_id)
+INSERT INTO attractions (id,name,description,time,ass,ase,photo,sound,location_id)
 VALUES
 (1,'Liderlige grønne frøer', 'Her på det østligste punkt kan man se mange dyr. Mest højlydt er grøn frø, men de er så hurtige til at smutte væk, at de sjældent ses. I denne måned er det dog muligt da det er grøn frø yngletid og de derfor er mere fremme',
- 25, '2021-05-06', '2021-06-06', 'https://www.christiansoe.dk/wp-content/uploads/2018/11/animals.jpg', '/test/path/sound', 1),
+ 25, '2021-05-06', '2021-06-06', 'https://www.christiansoe.dk/wp-content/uploads/2018/11/animals.jpg', '/test/path/sound', 20),
 (2,'Christiansø hest', 'Kom ind i hestehytten og hils på de søde heste her på Christionsø. Her kan du få lov at fodre og ae det store heste, og mellem kl. 10-15, er der mulighed for de mindste at ridde i ringe.',
  30, '2021-05-01', '2021-08-20', 'https://cdn.pixabay.com/photo/2017/04/02/19/12/horse-2196656__480.jpg', '/test/path/sound', 20),
 (3,'Kunst og kultur', 'I 2018 blev Christiansø Kunst og Kulturråd oprettet.
@@ -45,11 +45,10 @@ Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivend
 (7,'Ynglefuglene på Christiansø', 'De fleste af ynglefuglene er hav- og kystfugle, fx alk, lomvie, sølvmåge og edderfugl. Alk og lomvie er ægte havfugle, der kun kommer på land i yngletiden. Normalt holder de kun til på ',
  23, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/11/fugl7457.jpg', '/test/path/sound', 16),
 (8,'Øl-smagning', 'Kom til ølsmagning på', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 18),
-(9,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
-(10,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
-(11,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
-(12,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
-(13,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
-(14,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
+(9,'Sæler', 'Her finder du Danmarks frækkeste sæler', 10, '2021-01-06', '2021-12-02', '/test/path/picture', '/test/path/sound', 1),
+(10,'Udsigt over havet', 'Her finder du en af Christiansøs bedste udsigter', 10, '2021-01-06', '2021-12-02', '/test/path/picture', '/test/path/sound', 2),
+(11,'Kanon med kanoner', 'Her finder du en række af Christiansøs forsvar, i form af gode gamledavs kanoner', 10, '2021-01-06', '2021-12-02', '/test/path/picture', '/test/path/sound', 3),
+(12,'Spøgelser og andre myter', 'Det spøger på christiansø, kom og hør om christiansøs helt eget spøgelse ved farhansylv', 10, '2021-08-06', '2021-08-02', '/test/path/picture', '/test/path/sound', 5),
+(13,'Vinsmagning i Jesus tegn', 'Af jord er du kommet og af jord skal du blive. Eller, det bliver du i hvertfald efter du har fået en lille en her i guds hus. Vel mødt!', 10, '2021-05-06', '2021-06-02', '/test/path/picture', '/test/path/sound', 6),
+(14,'Hør sirener i sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 8);
 
-;

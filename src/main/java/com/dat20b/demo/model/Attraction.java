@@ -15,18 +15,25 @@ public class Attraction {
     @Column(name = "id", nullable = false, unique = true)
     int attraction_id;
 
+    @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "description", nullable = false,length = 1000)
     private String description;
 
+    @Column(name = "time", nullable = false)
     private Duration time;
 
+    @Column(name = "ass", nullable = false)
     private LocalDate activeSeasonStart;
 
+    @Column(name = "ase", nullable = false)
     private LocalDate activeSeasonEnd;
 
+    @Column(name = "photo", nullable = false)
     private String photo;
 
+    @Column(name = "sound", nullable = false)
     private String sound;
 
     @ManyToOne
