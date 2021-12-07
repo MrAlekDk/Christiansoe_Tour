@@ -106,8 +106,7 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
             let id = markers[i].locationID;
 
             let marker = L.marker([x , y]).on('click', clickMarkersHandler).addTo(map).bindTooltip(name)
-            marker.locationID = id;
-
+            marker.myVeryOwnId = id
         }
     }
     // Set test brugers lokation
@@ -136,16 +135,10 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
     function clickMarkersHandler(event) {
         //event.preventDefault()
         //event.stopPropagation()
-
-        console.log(event.locationID)
+        console.log(event.target.myVeryOwnId)
 
     }
 
-    function setUpHandlers(){
-        document.getElementById("map").onclick = clickMarkersHandler
-    }
-
-    setUpHandlers()
 
 
 
