@@ -77,6 +77,7 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         }
     }, 1000);
 }
+
     //fetch locations
     const URL = "http://localhost:8080/lokationer";
     let locations = []
@@ -94,6 +95,8 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
 
     fetchLocations()
 
+    // Tilføje markers til kortet
+
     function createMarkers(){
         let markers = locations;
         for (let i = 0; i < markers.length; i++) {
@@ -105,21 +108,42 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
 
         }
     }
-
+    // Set test brugers lokation
     function setUserLocation(user, location){
         user.setLatLng([location.coordinates.x, location.coordinates.y])
         measuredDistance()
     }
 
-    <!-----------ATTRACTION MODAL-------->
 
-//Get modal
-const myModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
 
-//Get button
-let attractionButton = document.getElementById("attraction-btn")
+    // Tjek om der er hul igennem til geolocation
+    if ('geolocation' in navigator){
+        console.log('geolocation is available')
+       // setInterval(function (){
+            navigator.geolocation.getCurrentPosition(position => {
+                console.log(position)
+                L.marker([position.coords.latitude, position.coords.longitude], {icon: userIcon}).addTo(map).bindTooltip("You");
+            })
+       // }, 1000)
 
-//Logic for button to show modal
-attractionButton.onclick = function(){
-        myModal.show()
-}
+    } else{
+        console.log('geolocation is not available')
+    }
+
+    /*document.getElementById("map").addEventListener("click", function (){
+         const idForLocationToFind = document.getElementById("location-id").value
+     }*/
+
+
+    /*const URL = "http://localhost:8080/location";
+    document.getElementById("map").addEventListener("map") = (evt) => {
+        evt.preventDefault()
+        const idForLocationToFind = document.getElementById("location-id").value
+        fetch(URL + "/" + idForUserToFind)
+            .then(res => {
+                if (res.status == 404) {
+                    throw `Location with ID ${idForLocationToFind} not found`
+                }
+                return res.json()
+            })
+    }*/
