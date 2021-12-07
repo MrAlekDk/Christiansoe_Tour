@@ -24,3 +24,9 @@ VALUES(1,'Danmarks østligste punkt','Lige her, befinder danmarks mest østligge
 (23,'Ruths Sild','Christiansøs bedste sild (og de eneste)',55.31981467117548,15.185251324440898),
 (24,'Bådsmandsboden','Bådmændenes bod',55.322044715543946,15.184508352543773),
 (25,'Christiansø Museum-vest','Det ene af de to museer',55.32204786307992,15.183754651);
+
+
+INSERT INTO attractions (id,name,location_id)
+VALUES
+(1,'Test seværdighed til Danmarks østligste punkt',1),
+(2,'Test seværdighed til Christiansø museum-vest',25);

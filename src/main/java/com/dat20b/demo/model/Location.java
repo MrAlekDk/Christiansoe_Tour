@@ -47,14 +47,6 @@ public class Location {
         this.attractionList = attractionList;
     }
 
-    public List<Attraction> getAttractionList() {
-        return attractionList;
-    }
-
-    public void setAttractionList(List<Attraction> attractionList) {
-        this.attractionList = attractionList;
-    }
-
     public int getLocationID() {
         return locationID;
     }

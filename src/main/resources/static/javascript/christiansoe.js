@@ -118,7 +118,7 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
 
     // Tjek om der er hul igennem til geolocation
     if ('geolocation' in navigator){
-        console.log('geolocation is available')
+       //console.log('geolocation is available')
        // setInterval(function (){
             navigator.geolocation.getCurrentPosition(position => {
                 console.log(position)
