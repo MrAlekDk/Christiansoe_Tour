@@ -105,7 +105,7 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
             let name = markers[i].name;
             let id = markers[i].locationID;
 
-            let marker = L.marker([x , y]).on('click', clickMarkersHandler).addTo(map).bindTooltip(name)
+            let marker = L.marker([x , y]).on('click', clickLocationHandler).addTo(map).bindTooltip(name)
             marker.myVeryOwnId = id
         }
     }
@@ -129,17 +129,26 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         console.log('geolocation is not available')
     }
 
+
+function makeAttractionRows(map) {
+    const rows = map.map(att => `
+         <tr>
+           <td>${att.name}</td>
+           <td>${att.description}</td>
+           <img src="${att.photo}">
+         </tr>
+        `)
+    document.getElementById("attraction-table-body").innerHTML = rows.join("")
+}
     //Making a modal out of HTML element
     const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
 
-    function clickMarkersHandler(event) {
-        //event.preventDefault()
-        //event.stopPropagation()
-        console.log(event.target.myVeryOwnId)
+function clickLocationHandler(event) {
+    let locationId = event.target.myVeryOwnId
+    let obj = locations.find(arr => arr.locationID === locationId)
+    let specificAttractionsList = obj.attractionList
 
-    }
-
-
-
-
+    makeAttractionRows(specificAttractionsList)
+    attractionModal.show()
+}
 
