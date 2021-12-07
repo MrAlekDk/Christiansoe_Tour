@@ -29,5 +29,27 @@ VALUES
 
 INSERT INTO attractions (id,name,location_id)
 VALUES
-(1,'Test seværdighed til Danmarks østligste punkt',1),
-(2,'Test seværdighed til Christiansø museum-vest',25);
+(1,'Liderlige grønne frøer', 'Her på det østligste punkt kan man se mange dyr. Mest højlydt er grøn frø, men de er så hurtige til at smutte væk, at de sjældent ses. I denne måned er det dog muligt da det er grøn frø yngletid og de derfor er mere fremme',
+ 25, '2021-05-06', '2021-06-06', 'https://www.christiansoe.dk/wp-content/uploads/2018/11/animals.jpg', '/test/path/sound', 1),
+(2,'Christiansø hest', 'Kom ind i hestehytten og hils på de søde heste her på Christionsø. Her kan du få lov at fodre og ae det store heste, og mellem kl. 10-15, er der mulighed for de mindste at ridde i ringe.',
+ 30, '2021-05-01', '2021-08-20', 'https://cdn.pixabay.com/photo/2017/04/02/19/12/horse-2196656__480.jpg', '/test/path/sound', 20),
+(3,'Kunst og kultur', 'I 2018 blev Christiansø Kunst og Kulturråd oprettet.
+Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivende organ med kulturel og kunstnerisk ekspertise, der kunne sikre, at udstillingerne i de to tårne – faste såvel som skiftende – har et højt kunstnerisk og formidlingsmæssigt niveau.',
+ 20, '2021-03-07', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2019/07/store-taarn-janne-klerk-3-1024x768.jpg', '/test/path/sound', 7),
+(4,'Store tårn - store is', 'Så skete det. Den omvandrende is-bod har nået sit stop ved store tårn! Kom og få øens billigste og største is! Du kan også få en islatte, sodavand eller cafe til din dejlige vandre tur på Christiansø',
+ 10, '2021-05-06', '2021-08-14', 'https://p0.pikist.com/photos/471/30/ice-cream-man-ice-cream-shop-ice-cream-parlor-walking-ice-cream-cones-bicycle.jpg', '/test/path/sound', 7),
+(5,'Gyldenløves Batteri historie', 'Gyldenløves Batteri blev bygget i sommeren 1684 og er fæstningens første bygningsværk. Batteriet er et af de fire havnebatterier (foruden Juels, Spanns og Sehesteds Batterier), som skulle forsvare havneindløbet mod en invaderende flåde. En af Christiansøs befæstningsmæssige svagheder var nemlig, at en fjende i princippet kunne omgå øernes mange kanonbatterier og fæstningstårne ved at sejle direkte gennem havneindløbet, ind i fæstningens hjerte. Derfor var havnen i krigstid spærret af kabler og kæder. Neden for Gyldenløves Batteri kan I se et hul i muren, hvorigennem havnespærringen var fastgjort.',
+ 35, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2019/07/gyldenloeves-bastion-4-1024x511.jpg', '/test/path/sound', 4),
+(6,'Edderfugle', 'Lige nu har Edderfuglenes yngletid her på Christianø. Edderfuglene lever mest af blåmuslinger. Kort efter edderfugleællingerne er klækket, svømmer de i småflokke sammen med hunnerne til Bornholm, hvor der er mere mad til ungerne i form af tanglopper og småmuslinger.',
+ 22, '2021-04-01', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/12/aabo-2-1024x680.jpg', '/test/path/sound', 16),
+(7,'Ynglefuglene på Christiansø', 'De fleste af ynglefuglene er hav- og kystfugle, fx alk, lomvie, sølvmåge og edderfugl. Alk og lomvie er ægte havfugle, der kun kommer på land i yngletiden. Normalt holder de kun til på ',
+ 23, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/11/fugl7457.jpg', '/test/path/sound', 16),
+(8,'Øl-smagning', 'Kom til ølsmagning på', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 18),
+(9,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
+(10,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
+(11,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
+(12,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
+(13,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
+(14,'Test seværdighed til Danmarks østligste punkt', 'Description', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 1),
+
+;
