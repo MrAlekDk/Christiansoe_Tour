@@ -63,7 +63,7 @@ Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivend
 (17,'Havmåger', 'Om sommeren vækker livet omkring christiansø sig. Store og talrige måger ses ved badebroen.',
  15, '2021-04-06', '2021-09-02', 'https://www.mandesiden.dk/wp-content/uploads/2020/04/Foto-2020-04-16-kl.-10.12.45.jpg', '/test/path/sound', 12),
 (18,'Lilletårns museum', 'Lilletårn byder velkommen til gæster, der er interesseret i øens historie.',
- 10, '2021-04-06', '2021-10-02', '/test/path/picture', '/test/path/sound', 13),
+ 10, '2021-04-06', '2021-10-02', 'https://bornholm.info/wp-content/media/2020/04/christiansoe_lilletaarn_800x600_1.jpg', '/test/path/sound', 13),
 (19,'Havørne', 'En af christiansøs sjældne dyr, er og bliver havørnen. Den store og pragtige fugl ses i sommer og efter- halvåret.',
  15, '2021-06-06', '2021-11-02', 'https://skandinaviskdyrepark.dk/wp-content/uploads/2020/02/Koch_171.jpg', '/test/path/sound', 14),
 (20,'Loppemarked i loppehytten', 'Et stort loppemarked for christiansø i Februar måned', 10, '2021-02-01', '2021-02-28', 'https://i.pinimg.com/originals/47/09/f2/4709f24acc53de0961c1ad8b2f90e171.jpg', '/test/path/sound', 15),
@@ -74,14 +74,14 @@ Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivend
  30, '2021-02-05', '2021-10-02', 'https://techcrunch.com/wp-content/uploads/2017/12/lapras-2.png', '/test/path/sound', 21),
 (24,'Hør sirener i Sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', 'https://bornholm.info/wp-content/media/2020/06/lighuset-2-1024x578.jpg', '/test/path/sound', 8),
 (25,'Kom og hør om Rantzaus Bastion','Rantzaus Bastion er et historisk mindesmærke på Christiansø, mere ikoniske og historisk vigtige murer findes ikke, selv berlinermuren kunne ikke følge med.',
- 20, '2021-05-06', '2021-09-02', 'https://docplayer.dk/docs-images/93/112044041/images/5-2.jpg', '/test/path/sound', 3);
-(26,'Hertugindens Bastion','Man kan ikke sige at man har besøgt Christiansø uden at være forbi Hertugindens Bastion. Historien og oplevelsen af dette sted bliver det lækkreste du kunne forestille dig',
-30, '2021-05-06', '2021-09-02', 'https://images.jfmedier.dk/images/8/85/851/851f2d21-f0f8-49f2-a0c3-6df1399c66d3_0_90_0_0_2845_1885_1440_954_bf441171.jpg', '/test/path/sound', 2);
+ 20, '2021-05-06', '2021-09-02', 'https://docplayer.dk/docs-images/93/112044041/images/5-2.jpg', '/test/path/sound', 3),
+(26,'Kom og hør om Hertugindens Bastion','Man kan ikke sige at man har besøgt Christiansø uden at være forbi Hertugindens Bastion. Historien og oplevelsen af dette sted bliver det lækkreste du kunne forestille dig.',
+30, '2021-05-06', '2021-09-02', 'https://images.jfmedier.dk/images/8/85/851/851f2d21-f0f8-49f2-a0c3-6df1399c66d3_0_90_0_0_2845_1885_1440_954_bf441171.jpg', '/test/path/sound', 2),
 (27,'Båd tur ved Bådsmandsbåden','Kom ned og mød de lokale fiskere ved Bådmandsbåden, og hvis du er heldig, få en lille tur i jollen',
-25, '2021-05-06', '2021-09-02', 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX26852345.jpg', '/test/path/sound', 24);
-(28,'Lækker mad på Christiansø', 'I Pak huset har vi Christiansøs bedste mad. Syrligheden, kassen... u know it when u know, ligesom bare ziinngggg',
-20, '2021-05-06', '2021-09-02', 'https://i.pinimg.com/originals/0e/20/a7/0e20a7b9a3f1f06465170d13919b2d82.jpg', '/test/path/sound', 18);
-(29,'De anderledes dyr', 'Kom hen til heste hytten og hils på de nuværende lejere af boligen',
-10, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/12/hestehytten-1024x680.jpg', '/test/path/sound', 4);
-(30,'Tag en dukkert', 'Har du badetøj med? Så vil vi anbefale en tur forbi christiansøs badebro.', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 12);
+25, '2021-05-06', '2021-09-02', 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX26852345.jpg', '/test/path/sound', 24),
+(28,'Lækker mad på Christiansø', 'I Pak huset har vi Christiansøs bedste mad. Syrligheden, knassen... u know it when u know, ligesom bare ziinngggg',
+20, '2021-05-06', '2021-09-02', 'https://i.pinimg.com/originals/0e/20/a7/0e20a7b9a3f1f06465170d13919b2d82.jpg', '/test/path/sound', 18),
+(29,'De nye beboere', 'Kom hen til heste hytten og hils på de nuværende lejere af boligen',
+10, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/12/hestehytten-1024x680.jpg', '/test/path/sound', 4),
+(30,'Tag en dukkert', 'Har du badetøj med? Så vil vi anbefale en tur forbi christiansøs badebro.', 20, '2021-05-06', '2021-09-02', 'http://1.bp.blogspot.com/-TcN9HM_asSA/Uk7BPwFQa-I/AAAAAAAAAU4/YTU7amtm4T0/s1600/badebro.jpg', '/test/path/sound', 12);
 
