@@ -31,30 +31,30 @@ INSERT INTO attractions (id,name,description,time,ass,ase,photo,sound,location_i
 VALUES
 (1,'Liderlige grønne frøer', 'Her på det østligste punkt kan man se mange dyr. Mest højlydt er grøn frø, men de er så hurtige til at smutte væk, at de sjældent ses. I denne måned er det dog muligt da det er grøn frø yngletid og de derfor er mere fremme',
  25, '2021-05-06', '2021-06-06', 'https://www.christiansoe.dk/wp-content/uploads/2018/11/animals.jpg', '/test/path/sound', 20),
-(2,'Christiansø hest', 'Kom ind i hestehytten og hils på de søde heste her på Christionsø. Her kan du få lov at fodre og ae det store heste, og mellem kl. 10-15, er der mulighed for de mindste at ridde i ringe.',
+(2,'Christiansø hest', 'Kom ind i hestehytten og hils på de søde heste her på Christiansø. Her kan du få lov at fodre og ae det store heste, og mellem kl. 10-15, er der mulighed for de mindste at ride i ringe.',
  30, '2021-05-01', '2021-08-20', 'https://cdn.pixabay.com/photo/2017/04/02/19/12/horse-2196656__480.jpg', '/test/path/sound', 20),
 (3,'Kunst og kultur', 'I 2018 blev Christiansø Kunst og Kulturråd oprettet.
 Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivende organ med kulturel og kunstnerisk ekspertise, der kunne sikre, at udstillingerne i de to tårne – faste såvel som skiftende – har et højt kunstnerisk og formidlingsmæssigt niveau.',
  20, '2021-03-07', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2019/07/store-taarn-janne-klerk-3-1024x768.jpg', '/test/path/sound', 7),
-(4,'Store tårn - store is', 'Så skete det. Den omvandrende is-bod har nået sit stop ved store tårn! Kom og få øens billigste og største is! Du kan også få en islatte, sodavand eller cafe til din dejlige vandre tur på Christiansø',
+(4,'Store tårn - store is', 'Så skete det. Den omvandrende isbod har nået sit stop ved store tårn! Kom og få øens billigste og største is! Du kan også få en islatté, sodavand eller kaffe til din dejlige vandre tur på Christiansø',
  10, '2021-05-06', '2021-08-14', 'https://p0.pikist.com/photos/471/30/ice-cream-man-ice-cream-shop-ice-cream-parlor-walking-ice-cream-cones-bicycle.jpg', '/test/path/sound', 7),
 (5,'Gyldenløves Batteri historie', 'Gyldenløves Batteri blev bygget i sommeren 1684 og er fæstningens første bygningsværk. Batteriet er et af de fire havnebatterier (foruden Juels, Spanns og Sehesteds Batterier), som skulle forsvare havneindløbet mod en invaderende flåde. En af Christiansøs befæstningsmæssige svagheder var nemlig, at en fjende i princippet kunne omgå øernes mange kanonbatterier og fæstningstårne ved at sejle direkte gennem havneindløbet, ind i fæstningens hjerte. Derfor var havnen i krigstid spærret af kabler og kæder. Neden for Gyldenløves Batteri kan I se et hul i muren, hvorigennem havnespærringen var fastgjort.',
  35, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2019/07/gyldenloeves-bastion-4-1024x511.jpg', '/test/path/sound', 4),
-(6,'Edderfugle', 'Lige nu har Edderfuglenes yngletid her på Christianø. Edderfuglene lever mest af blåmuslinger. Kort efter edderfugleællingerne er klækket, svømmer de i småflokke sammen med hunnerne til Bornholm, hvor der er mere mad til ungerne i form af tanglopper og småmuslinger.',
+(6,'Edderfugle', 'Lige nu har Edderfuglenes yngletid her på Christiansø. Edderfuglene lever mest af blåmuslinger. Kort efter edderfugleællingerne er klækket, svømmer de i småflokke sammen med hunnerne til Bornholm, hvor der er mere mad til ungerne i form af tanglopper og småmuslinger.',
  22, '2021-04-01', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/12/aabo-2-1024x680.jpg', '/test/path/sound', 16),
 (7,'Ynglefuglene på Christiansø', 'De fleste af ynglefuglene er hav- og kystfugle, fx alk, lomvie, sølvmåge og edderfugl. Alk og lomvie er ægte havfugle, der kun kommer på land i yngletiden. Normalt holder de kun til på ',
  23, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/11/fugl7457.jpg', '/test/path/sound', 16),
-(8,'Øl-smagning', 'Kom til ølsmagning i pak huset og smag på Christiansø. Ølet er levet emd de fineste ingradienser Øen har at byde på',
+(8,'Øl-smagning', 'Kom til ølsmagning i pak huset og smag på Christiansø. Ølet er levet med de fineste ingredienser Øen har at byde på',
  45, '2021-05-06', '2021-09-02', 'https://www.findsmagning.dk/wp-content/uploads/2017/06/%C3%98lsmagning-for-2-i-hele-landet.jpg', '/test/path/sound', 18),
 (9,'Sæler', 'Her finder du Danmarks frækkeste sæler', 20, '2021-01-06', '2021-12-02', 'https://naturstyrelsen.dk/media/290839/sael-der-vinker.jpg', '/test/path/sound', 1),
 (10,'Udsigt over havet', 'Her finder du en af Christiansøs bedste udsigter', 10, '2021-01-06', '2021-12-02', 'https://www.annevibekerejser.dk/media/19365/212-img_8507.jpg', '/test/path/sound', 2),
-(11,'Kanon med kanoner', 'Her finder du en række af Christiansøs forsvar, i form af gode gamledavs kanoner',
+(11,'Kanon med kanoner', 'Her finder du en række af Christiansøs forsvar, i form af gode gammeldavs kanoner',
  15, '2021-01-06', '2021-12-02', 'https://media-cdn.tripadvisor.com/media/photo-s/0a/5b/ea/f0/kanoner-pa-christianso.jpg', '/test/path/sound', 3),
 (12,'Spøgelser og andre myter', 'Det spøger på christiansø, kom og hør om christiansøs helt eget spøgelse ved farhansylv',
  40, '2021-08-06', '2021-08-02', 'https://img.nordjyske.dk/s3/nj-prod-public-images/Ggv6k77TfR1LZe7MpQhKrKdyuK4.jpg', '/test/path/sound', 5),
-(13,'Vinsmagning i Jesus tegn', 'Af jord er du kommet og af jord skal du blive. Eller, det bliver du i hvertfald efter du har fået en lille en her i guds hus. Vel mødt!',
+(13,'Vinsmagning i Jesus tegn', 'Af jord er du kommet og af jord skal du blive. Eller, det bliver du i hvert fald efter du har fået en lille en her i guds hus. Vel mødt!',
  20, '2021-05-06', '2021-06-02', 'https://edge.churchdesk.com/blog-52544/span5_16-9/public/o/322/brod.og.vin.jpg', '/test/path/sound', 6),
-(14,'Bastionen over alle bastioner', 'Her ser du et stykke af christiansøs historie. Kongens bastion er den største og vigste af alle fortets bastioner.',
+(14,'Bastionen over alle bastioner', 'Her ser du et stykke af christiansøs historie. Kongens bastion er den største og vigtigste af alle fortets bastioner.',
  20, '2021-01-06', '2021-12-02', 'https://bornholm.info/wp-content/media/2020/07/billede-kongens-bastion-drone-1920x830-1-1024x443.jpg', '/test/path/sound', 10),
 (15,'Biavling ved havnen', 'Christiansøs helt egen biavler, viser dig hvordan man fremavler de bedste og mest arbejdsomme bier. Mulighed for at prøvesmage den lækre naturlige honning, fra ægte nordiske bier.',
  15, '2021-05-06', '2021-11-02', 'https://www.christiansoe.dk/wp-content/uploads/2019/01/nordiske-bier.foto-ole-hertz-300x225.jpg', '/test/path/sound', 10),
@@ -62,7 +62,7 @@ Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivend
  15, '2021-01-01', '2021-12-30', 'https://bornholm.info/wp-content/media/2020/03/billede-christiansoe-overnatning-ballonen-879x385-1.jpg', '/test/path/sound', 11),
 (17,'Havmåger', 'Om sommeren vækker livet omkring christiansø sig. Store og talrige måger ses ved badebroen.',
  15, '2021-04-06', '2021-09-02', 'https://www.mandesiden.dk/wp-content/uploads/2020/04/Foto-2020-04-16-kl.-10.12.45.jpg', '/test/path/sound', 12),
-(18,'Lilletårns museum', 'Lilletårn byder velkommen til gæster, der er interesseret i øens histoie.',
+(18,'Lilletårns museum', 'Lilletårn byder velkommen til gæster, der er interesseret i øens historie.',
  10, '2021-04-06', '2021-10-02', '/test/path/picture', '/test/path/sound', 13),
 (19,'Havørne', 'En af christiansøs sjældne dyr, er og bliver havørnen. Den store og pragtige fugl ses i sommer og efter- halvåret.',
  15, '2021-06-06', '2021-11-02', 'https://skandinaviskdyrepark.dk/wp-content/uploads/2020/02/Koch_171.jpg', '/test/path/sound', 14),
@@ -72,16 +72,16 @@ Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivend
 (22,'Museums dage i december', 'Det går helt amok med museums dagene', 30, '2021-05-06', '2021-09-02', 'http://peterlacour.dk/gamle_site/_wp_generated/wpfb870411.png', '/test/path/sound', 19),
 (23,'Pokémon på Christiansø!?!', 'Man skulle ikke tro det, men flere pokemon eksperter har sagt at pokemon fra Christiansø er bedre end resten af Danmark! Vores gym her ved teltpladsen er kun for pokemon masters.',
  30, '2021-02-05', '2021-10-02', 'https://techcrunch.com/wp-content/uploads/2017/12/lapras-2.png', '/test/path/sound', 21),
-(24,'Hør sirener i sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', 'https://bornholm.info/wp-content/media/2020/06/lighuset-2-1024x578.jpg', '/test/path/sound', 8),
+(24,'Hør sirener i Sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', 'https://bornholm.info/wp-content/media/2020/06/lighuset-2-1024x578.jpg', '/test/path/sound', 8),
 (25,'Kom og hør om Rantzaus Bastion','Rantzaus Bastion er et historisk mindesmærke på Christiansø, mere ikoniske og historisk vigtige murer findes ikke, selv berlinermuren kunne ikke følge med.',
  20, '2021-05-06', '2021-09-02', 'https://docplayer.dk/docs-images/93/112044041/images/5-2.jpg', '/test/path/sound', 3);
 (26,'Hertugindens Bastion','Man kan ikke sige at man har besøgt Christiansø uden at være forbi Hertugindens Bastion. Historien og oplevelsen af dette sted bliver det lækkreste du kunne forestille dig',
 30, '2021-05-06', '2021-09-02', 'https://images.jfmedier.dk/images/8/85/851/851f2d21-f0f8-49f2-a0c3-6df1399c66d3_0_90_0_0_2845_1885_1440_954_bf441171.jpg', '/test/path/sound', 2);
-(27,'Båd tur ved Bådsmandsboden','Kom ned og mød de lokale fiskere ved Bådmansboden, og hvis du er heldig, få en lille tur i jollen',
+(27,'Båd tur ved Bådsmandsbåden','Kom ned og mød de lokale fiskere ved Bådmandsbåden, og hvis du er heldig, få en lille tur i jollen',
 25, '2021-05-06', '2021-09-02', 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX26852345.jpg', '/test/path/sound', 24);
-(28,'Lækker mad på Chrsiansø', 'I Pak huset har vi Christiansøs bedste mad. Syrligheden, kassen... u know it when u know, ligesom bare ziinngggg',
+(28,'Lækker mad på Christiansø', 'I Pak huset har vi Christiansøs bedste mad. Syrligheden, kassen... u know it when u know, ligesom bare ziinngggg',
 20, '2021-05-06', '2021-09-02', 'https://i.pinimg.com/originals/0e/20/a7/0e20a7b9a3f1f06465170d13919b2d82.jpg', '/test/path/sound', 18);
-(29,'De anderledes dyr', 'Kom hen til heste hytten og hils på de nuværdende lejere af boligen',
+(29,'De anderledes dyr', 'Kom hen til heste hytten og hils på de nuværende lejere af boligen',
 10, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/12/hestehytten-1024x680.jpg', '/test/path/sound', 4);
-(30,'Tag en dukkert', 'Har du badetøj med? Så vil vi anbefale en tur forbi christiansøs badebro. Her kan ', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 12);
+(30,'Tag en dukkert', 'Har du badetøj med? Så vil vi anbefale en tur forbi christiansøs badebro.', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 12);
 
