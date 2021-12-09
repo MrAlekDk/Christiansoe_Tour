@@ -1,9 +1,7 @@
 package com.dat20b.demo.controllers;
 
-import com.dat20b.demo.model.Attraction;
 import com.dat20b.demo.model.Location;
-import com.dat20b.demo.repository.AttractionRepository;
-import com.dat20b.demo.repository.LocationRepository;
+import com.dat20b.demo.model.Route;
 import com.dat20b.demo.services.LocationService;
 
 import org.springframework.http.HttpStatus;
@@ -25,6 +23,7 @@ public class LocationController {
 
     public LocationController(LocationService locationService) {
         this.locationsService = locationService;
+
     }
 
 

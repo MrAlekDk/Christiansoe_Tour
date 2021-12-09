@@ -64,3 +64,10 @@ Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivend
 (24,'Hør sirener i sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 8),
 (25,'Hør sirener i sirenehuset', 'Kommer du forbi her, bliver du nok lidt døv. Det bliver hyggeligt', 10, '2021-05-06', '2021-09-02', '/test/path/picture', '/test/path/sound', 8);
 
+INSERT INTO ROUTES(id,name,description,timeD,routeLength)
+VALUES(1,'Test rute','En lille test rute',10,10.0);
+
+INSERT INTO route_locations
+VALUES(1,1),
+(2,1),
+(3,1);

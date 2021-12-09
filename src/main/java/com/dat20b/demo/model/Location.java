@@ -35,6 +35,10 @@ public class Location {
     @JsonManagedReference("attractions")
     private List<Attraction> attractionList = new ArrayList<>();
 
+    //join tables her
+    @ManyToMany
+    @JoinTable(name="route_locations", joinColumns = @JoinColumn(name="location_id"), inverseJoinColumns = @JoinColumn(name = "route_id"))
+    private List<Route> allRoutes = new ArrayList<>();
 
     public Location(){}
 

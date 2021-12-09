@@ -18,6 +18,7 @@ public class Sort {
         return allAttractions;
     }
 
+    //Check if current month is between the attraction's starting and ending month
     private boolean checkIfInActiveSeason(Attraction attraction) {
         Month monthNow = LocalDate.now().getMonth();
         Month monthStart = attraction.getActiveSeasonStart().getMonth();

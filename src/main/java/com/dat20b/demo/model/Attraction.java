@@ -18,7 +18,7 @@ public class Attraction {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "description", nullable = false,length = 1000)
+    @Column(name = "description", nullable = false, length = 1000)
     private String description;
 
     @Column(name = "time", nullable = false)
