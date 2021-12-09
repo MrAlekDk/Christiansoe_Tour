@@ -129,13 +129,12 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         console.log('geolocation is not available')
     }
 
-
 function makeAttractionRows(map) {
     const rows = map.map(att => `
          <tr>
            <td>${att.name}</td>
-           <td>${att.description}</td>
-           <img src="${att.photo}">
+           <td style = "" >${att.description}</td>
+           <td><img src="${att.photo}" style="max-width: 200px"></td>
          </tr>
         `)
     document.getElementById("attraction-table-body").innerHTML = rows.join("")
@@ -152,3 +151,11 @@ function clickLocationHandler(event) {
     attractionModal.show()
 }
 
+/*let value = document.getElementById("attraction-table-body")
+
+    function cutStrings(){
+        let maxLength = 30;
+        return value.slice(0,maxLength)+'...';
+
+    }
+    cutStrings()
