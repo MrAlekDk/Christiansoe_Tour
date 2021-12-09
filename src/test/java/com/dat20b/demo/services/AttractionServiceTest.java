@@ -80,4 +80,27 @@ class AttractionServiceTest {
         assertEquals(4, testList.size());
         Mockito.verify(attractionRepository, times(1)).findAll();
     }
+
+    @Test
+    void addAttraction(){
+        //arrange
+        Duration d = Duration.between(LocalTime.NOON, LocalTime.MAX);
+        LocalDate dateStart = LocalDate.of(2021,1,1);
+        LocalDate dateEnd = LocalDate.of(2021,5,1);
+        Attraction att1 = new Attraction(1, "Slottet", "Det gamle slot er bygget i 1900", d, dateStart, dateEnd, "URLTilBillede", "URLTilLyd");
+
+        //act
+        attractionService.addAttraction(att1);
+
+        //assert
+        assertEquals(1, att1.getAttraction_id());
+        assertEquals("Slottet", att1.getName());
+        assertEquals("Det gamle slot er bygget i 1900", att1.getDescription());
+        assertEquals(Duration.between(LocalTime.NOON, LocalTime.MAX), att1.getTime());
+        assertEquals(LocalDate.of(2021,1,1), att1.getActiveSeasonStart());
+        assertEquals(LocalDate.of(2021,5,1), att1.getActiveSeasonEnd());
+        assertEquals("URLTilBillede",att1.getPhoto());
+        assertEquals("URLTilLyd", att1.getSound());
+        Mockito.verify(attractionRepository, times(1)).save(att1);
+    }
 }

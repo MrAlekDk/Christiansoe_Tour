@@ -20,5 +20,9 @@ public class AttractionService {
         attractionRepository.findAll().forEach(allAttractions::add);
         return allAttractions;
 }
+
+    public void addAttraction(Attraction attraction){
+        attractionRepository.save(attraction);
+    }
 }
 
