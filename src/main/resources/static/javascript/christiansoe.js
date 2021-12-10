@@ -150,6 +150,7 @@ function clickLocationHandler(event) {
     let locationId = event.target.myVeryOwnId
     let obj = locations.find(arr => arr.locationID === locationId)
     let specificAttractionsList = obj.attractionList
+    document.getElementById("modal-title").innerHTML = locations[locationId-1].name;
 
     makeAttractionRows(specificAttractionsList)
     attractionModal.show()
