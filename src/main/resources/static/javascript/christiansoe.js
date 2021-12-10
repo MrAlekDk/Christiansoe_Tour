@@ -129,7 +129,10 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         console.log('geolocation is not available')
     }
 
-    //tell the modal where to put the data and what data (tell HTML)
+    //Making a modal out of HTML element
+    const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
+
+//tell the modal where to put the data and what data (tell HTML)
 function makeAttractionRows(map) {
     const rows = map.map(att => `
          <tr>
@@ -141,10 +144,6 @@ function makeAttractionRows(map) {
     document.getElementById("attraction-table-body").innerHTML = rows.join("")
 }
 
-
-    //Making a modal out of HTML element
-    const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
-
 //Finding the right attractions to show, due to what location the user press on + showing the modal when the user press a location in the map
 function clickLocationHandler(event) {
     let locationId = event.target.myVeryOwnId
@@ -154,4 +153,43 @@ function clickLocationHandler(event) {
     makeAttractionRows(specificAttractionsList)
     attractionModal.show()
 }
+
+function setUpHandlers() {
+    document.getElementById("get-specific-route").onclick = getPossibleRoutes
+}
+
+//fetch routes
+const URL1 = "http://localhost:8080/ruter";
+let routes = []
+
+function fetchRoutes() {
+    fetch(URL1)
+        .then(res => res.json())
+        .then(data=> {
+            routes = data
+            console.log(data);
+        })
+}
+
+fetchRoutes()
+
+setUpHandlers()
+
+function getPossibleRoutes() {
+
+    routes = {}
+    let userInterest = document.getElementById("interests").value
+    let userDepatureTime = document.getElementById("depature").value
+
+    //Figure out how to update local data
+    const url = URL1 + '/specifikRuter/?userInterest=' + userInterest + '&userDepatureTime=' + userDepatureTime
+
+    fetch(url)
+        .then(res => res.json())
+        .then(routes => {
+            console.log(routes)
+        })
+}
+
+
 

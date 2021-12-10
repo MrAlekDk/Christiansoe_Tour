@@ -4,11 +4,9 @@ import com.dat20b.demo.model.Route;
 import com.dat20b.demo.services.RouteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.Duration;
 import java.util.List;
 
 @RestController
@@ -26,5 +24,12 @@ public class RouteController {
     public ResponseEntity<List<Route>> getAllRoutes(){
         List<Route> allRoutes = routeService.getAllRoutes();
         return ResponseEntity.status(HttpStatus.OK).body(allRoutes);
+    }
+
+    @GetMapping(value = "/specifikRuter")
+    public ResponseEntity<List<Route>> getSpecificRoutes(@RequestParam("userInterest") String userInterest, @RequestParam("userDepatureTime") String userDepatureTime){
+        System.out.println(userInterest);
+        System.out.println(userDepatureTime);
+        return null;
     }
 }
