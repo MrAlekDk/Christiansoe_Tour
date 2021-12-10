@@ -98,7 +98,7 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
     // Tilføje markers til kortet
 
     function createMarkers(){
-        let markers = locations;
+        let markers = locations
         for (let i = 0; i < markers.length; i++) {
             let x = markers[i].coordinates.x;
             let y = markers[i].coordinates.y;
@@ -129,26 +129,53 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         console.log('geolocation is not available')
     }
 
-
+    //tell the modal where to put the data and what data (tell HTML)
 function makeAttractionRows(map) {
     const rows = map.map(att => `
          <tr>
            <td>${att.name}</td>
-           <td>${att.description}</td>
-           <img src="${att.photo}">
+           <td>${att.description.slice(0,90) + "..."}</td>
+           <td><img src="${att.photo}" style="max-width: 200px"></td>
          </tr>
         `)
     document.getElementById("attraction-table-body").innerHTML = rows.join("")
 }
-    //Making a modal out of HTML element
-    const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
 
+
+    //Making a modal out of HTML element
+    //const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
+
+//Finding the right attractions to show, due to what location the user press on + showing the modal when the user press a location in the map
 function clickLocationHandler(event) {
     let locationId = event.target.myVeryOwnId
     let obj = locations.find(arr => arr.locationID === locationId)
     let specificAttractionsList = obj.attractionList
 
     makeAttractionRows(specificAttractionsList)
-    attractionModal.show()
+    //attractionModal.show()
+    showModal(locationId,specificAttractionsList)
+}
+
+    //Method that shows the modal
+function showModal(locationId, attractionList) {
+    const modal = document.getElementById("myModal");
+    let span = document.getElementsByClassName("close")[0];
+    document.getElementById("modal-title").innerText = locations[locationId-1].name
+
+    modal.style.display = "block";
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    document.getElementById("btn-close").onclick = (e) =>{
+        modal.style.display = "none";
+    }
 }
 

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:href="@{/styles/standardStyles.css}" rel="stylesheet">
     <!--- Leaflet css med styling til kortet. --->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -16,11 +15,7 @@
     </script>
     <script src="../javascript/christiansoe.js" defer></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+    <link th:href="@{/styles/standardStyles.css}" rel="stylesheet">
 </head>
 <body>
 <section class="header">
@@ -58,35 +53,29 @@
 <section class="footer">
     <small></small>
 </section>
-
-        <!-- Modal -->
-        <div class="modal fade" id="attraction-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modal-title">Se seværdigheder</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div style="height: 300px;overflow-y: scroll;">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>Navn</th>
-                                <th>Info</th>
-                                <th>Billede</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody id = "attraction-table-body">
-                            </tbody>
-                        </table>
-                    </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
-                </div>
-            </div>
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h5 id="modal-title"></h5>
+        <div class="table-holding-rows" style="height: 400px; overflow-y: scroll; ">
+            <table class="table">
+                <thead class="table-head">
+                <tr>
+                    <th>Attraction name</th>
+                    <th>Info</th>
+                    <th>Picture</th>
+                </tr>
+                </thead>
+                <tbody id = "attraction-table-body">
+                </tbody>
+            </table>
         </div>
+        <div class="modal-footer">
+            <button id="btn-close" type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
         </div>
-        <!--END OF MODAL -->
+    </div>
+</div>
+<!-- Modal end -->
 </body>
 </html>
