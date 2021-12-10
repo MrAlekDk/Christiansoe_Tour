@@ -144,6 +144,10 @@ function makeAttractionRows(map) {
     document.getElementById("attraction-table-body").innerHTML = rows.join("")
 }
 
+
+    //Making a modal out of HTML element
+    //const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
+
 //Finding the right attractions to show, due to what location the user press on + showing the modal when the user press a location in the map
 function clickLocationHandler(event) {
     let locationId = event.target.myVeryOwnId
@@ -151,7 +155,31 @@ function clickLocationHandler(event) {
     let specificAttractionsList = obj.attractionList
 
     makeAttractionRows(specificAttractionsList)
-    attractionModal.show()
+    //attractionModal.show()
+    showModal(locationId,specificAttractionsList)
+}
+
+    //Method that shows the modal
+function showModal(locationId, attractionList) {
+    const modal = document.getElementById("myModal");
+    let span = document.getElementsByClassName("close")[0];
+    document.getElementById("modal-title").innerText = locations[locationId-1].name
+
+    modal.style.display = "block";
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    document.getElementById("btn-close").onclick = (e) =>{
+        modal.style.display = "none";
+    }
 }
 
 function setUpHandlers() {
