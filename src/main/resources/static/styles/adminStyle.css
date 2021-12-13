@@ -5,12 +5,23 @@
 }
 
 .box{
-    flex-direction: row;
-    justify-content: center;
+    border-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-content: start;
     background: white;
     width: 32%;
-    height: 1000px;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button{
+    align-self: center;
 }
 
 h2{
@@ -20,5 +31,4 @@ h2{
     opacity: 90%;
     text-align: center;
     justify-content: center;
-    border: solid 2px black;
 }
