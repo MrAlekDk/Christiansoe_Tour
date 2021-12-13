@@ -14,7 +14,7 @@
 <section class="admin-boxes">
     <section class="box">
         <h2>Attractions</h2>
-        <div class="form">
+        <div class="centerButton">
             <button id="create-attraction">Create new Attraction</button>
         </div>
         <div class="attraction-list">
@@ -29,20 +29,50 @@
     </section>
     <section class="box">
         <h2>Routes</h2>
-        <div class="form">
+        <div class="centerButton">
             <button id="create-route">Create new Route</button>
         </div>
         <div class="route-list"></div>
     </section>
     <section class="box">
         <h2>Activities</h2>
-        <div class="form">
-            <div class="form">
+        <div class="centerButton">
+            <div class="centerButton">
                 <button id="create-activity">Create new Activity</button>
             </div>
         </div>
         <div class="route-list"></div>
     </section>
 </section>
+<div id="admin-modal" class="modal">
+    <div class="modal-content">
+        <span id="close" class="close">&times;</span>
+        <h5>Create attraction</h5>
+        <form>
+        <label>Navn:</label>
+        <input type="text" placeholder="Seværdigheds navn" id="name">
+        <label>Beskrivelse:</label>
+        <input type="text" placeholder="Seværdigheds beskrivelse" id="desc">
+        <label>Tid:</label>
+        <input type="number" placeholder="Seværdigheds tid" id="time">
+        <label>Start dato:</label>
+        <input type="date" placeholder="Seværdigheds start" id="start">
+        <label>Slut dato:</label>
+        <input type="date" placeholder="Seværdigheds slut" id="end">
+        <label>Billede link:</label>
+        <input type="text" placeholder="Seværdigheds billede" id="pic">
+        <label>Lydfil:</label>
+        <input type="text" placeholder="Seværdigheds lyd" id="sound">
+        <label>Lokation:</label>
+        <input type="number" placeholder="Seværdigheds lokation" id="location">
+            <button id="save-button">Gem</button>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button id="close-button" type="button">Luk</button>
+    </div>
+</div>
+
+
 </body>
 </html>

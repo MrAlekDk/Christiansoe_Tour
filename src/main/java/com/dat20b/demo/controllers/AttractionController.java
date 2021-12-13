@@ -26,9 +26,9 @@ public class AttractionController {
         return ResponseEntity.status(HttpStatus.OK).body(allAttractions);
     }
 
-    @PostMapping("/seværdigheder")
-    public ResponseEntity<Attraction> createAttraction(@RequestBody Attraction newAttraction){
-        attractionService.addAttraction(newAttraction);
+    @PostMapping("/{location}")
+    public ResponseEntity<Attraction> createAttraction(@RequestBody Attraction newAttraction, @PathVariable("location") Integer locationId){
+        attractionService.addAttraction(newAttraction, locationId);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 

@@ -246,24 +246,6 @@ function makeRoutesRows(routes) {
     document.getElementById("table-head").innerHTML = headerRows
 }
 
-    function createAttraction(){
-        const attraction = {}
-        const URL2 ='/seværdigheder'
-        // INSERT values here
-        const options = {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(attraction)
-        };
-        fetch(URL2, options)
-            .then(attraction => {
-                //Gem attraction
-                fetchLocations()
-            })
-    }
 
 
 

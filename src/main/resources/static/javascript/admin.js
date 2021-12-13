@@ -39,3 +39,61 @@ function makeAttractionRows(att) {
     document.getElementById("attraction-table-body").innerHTML = rows.join("")
     document.getElementById("table-head-attraction").innerHTML = headerRows
 }
+
+function createAttraction(evt){
+    evt.preventDefault()
+    evt.stopPropagation()
+    const attraction = {}
+    const URL2 ='http://localhost:8080/seværdigheder'
+    attraction.name = document.getElementById("name").value
+    attraction.description = document.getElementById("desc").value
+    //attraction.time = document.getElementById("time").value
+    attraction.startDate = document.getElementById("start").value
+    attraction.endDate = document.getElementById("end").value
+    attraction.picture = document.getElementById("pic").value
+    attraction.sound = document.getElementById("sound").value
+    location = document.getElementById("location").value
+    const options = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(attraction)
+    };
+    fetch(URL1 + "/" + location, options)
+        .then(attraction => {
+            fetchLocations()
+            // remove create attraction modal
+        }).catch(e => alert(e))
+}
+
+    document.getElementById("create-attraction").onclick = showAdminModal
+
+
+    function showAdminModal(){
+        const modal = document.getElementById("admin-modal")
+        let span = document.getElementById("close")
+
+        modal.style.display = "block"
+
+        span.onclick = function (){
+            modal.style.display = "none"
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none"
+            }
+        }
+
+        document.getElementById("close-button").onclick = (e) => {
+            modal.style.display = "none"
+        }
+
+    }
+
+    document.getElementById("save-button").onclick = createAttraction
+
+
+

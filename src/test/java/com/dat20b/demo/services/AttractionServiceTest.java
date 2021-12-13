@@ -90,7 +90,7 @@ class AttractionServiceTest {
         Attraction att1 = new Attraction(1, "Slottet", "Det gamle slot er bygget i 1900", d, dateStart, dateEnd, "URLTilBillede", "URLTilLyd");
 
         //act
-        attractionService.addAttraction(att1);
+        attractionService.addAttraction(att1, 1);
 
         //assert
         assertEquals(1, att1.getAttraction_id());

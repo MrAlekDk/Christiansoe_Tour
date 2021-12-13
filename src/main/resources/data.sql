@@ -29,7 +29,7 @@ VALUES
 
 INSERT INTO attractions (id,name,description,time,ass,ase,photo,sound,location_id)
 VALUES
-(1,'Liderlige grønne frøer', 'Her på det østligste punkt kan man se mange dyr. Mest højlydt er grøn frø, men de er så hurtige til at smutte væk, at de sjældent ses. I denne måned er det dog muligt da det er grøn frø yngletid og de derfor er mere fremme',
+(1,'Grønne frøer', 'Her på det østligste punkt kan man se mange dyr. Mest højlydt er grøn frø, men de er så hurtige til at smutte væk, at de sjældent ses. I denne måned er det dog muligt da det er grøn frø yngletid og de derfor er mere fremme',
  25, '2021-05-06', '2021-06-06', 'https://www.christiansoe.dk/wp-content/uploads/2018/11/animals.jpg', '/test/path/sound', 20),
 (2,'Christiansø hest', 'Kom ind i hestehytten og hils på de søde heste her på Christiansø. Her kan du få lov at fodre og ae det store heste, og mellem kl. 10-15, er der mulighed for de mindste at ride i ringe.',
  30, '2021-05-01', '2021-08-20', 'https://cdn.pixabay.com/photo/2017/04/02/19/12/horse-2196656__480.jpg', '/test/path/sound', 20),

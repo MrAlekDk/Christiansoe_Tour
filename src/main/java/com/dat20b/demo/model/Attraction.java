@@ -22,7 +22,7 @@ public class Attraction {
     private String description;
 
     @Column(name = "time", nullable = false)
-    private Duration time;
+    private int time;
 
     @Column(name = "ass", nullable = false)
     private LocalDate activeSeasonStart;
@@ -44,11 +44,22 @@ public class Attraction {
     public Attraction() {
     }
 
+    public Attraction(int attraction_id, String name, String description, long time, LocalDate activeSeasonStart, LocalDate activeSeasonEnd, String photo, String sound) {
+        this.attraction_id = attraction_id;
+        this.name = name;
+        this.description = description;
+        this.time = (int) time;
+        this.activeSeasonStart = activeSeasonStart;
+        this.activeSeasonEnd = activeSeasonEnd;
+        this.photo = photo;
+        this.sound = sound;
+    }
+
     public Attraction(int attraction_id, String name, String description, Duration time, LocalDate activeSeasonStart, LocalDate activeSeasonEnd, String photo, String sound) {
         this.attraction_id = attraction_id;
         this.name = name;
         this.description = description;
-        this.time = time;
+        this.time = (int) time.toMinutes();
         this.activeSeasonStart = activeSeasonStart;
         this.activeSeasonEnd = activeSeasonEnd;
         this.photo = photo;
@@ -81,11 +92,11 @@ public class Attraction {
     }
 
     public Duration getTime() {
-        return time;
+        return Duration.ofMinutes(time);
     }
 
     public void setTime(Duration time) {
-        this.time = time;
+        this.time = (int) time.toMinutes();
     }
 
     public LocalDate getActiveSeasonStart() {

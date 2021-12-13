@@ -33,7 +33,7 @@ td {
     overflow: hidden;
 }
 
-.form{
+.centerButton{
     display: flex;
     flex-direction: row;
     justify-content: center;
