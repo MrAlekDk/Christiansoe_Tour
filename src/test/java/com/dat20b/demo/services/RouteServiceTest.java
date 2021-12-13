@@ -1,9 +1,6 @@
 package com.dat20b.demo.services;
 
-import com.dat20b.demo.model.Attraction;
-import com.dat20b.demo.model.Coordinates;
-import com.dat20b.demo.model.Location;
-import com.dat20b.demo.model.Route;
+import com.dat20b.demo.model.*;
 import com.dat20b.demo.repository.RouteRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,9 +36,9 @@ class RouteServiceTest {
 
         double routeTotalDuration = 60;
 
-        Route route1 = new Route("name", "desc" , "interest", duration,  routeTotalDuration);
-        Route route2 = new Route("name", "desc" , "interest", duration,  routeTotalDuration);
-        Route route3 = new Route("name", "desc" , "interest", duration,  routeTotalDuration);
+        Route route1 = new Route("name", "desc" , Interest.HISTORY.name(), duration,  routeTotalDuration);
+        Route route2 = new Route("name", "desc" , Interest.ANIMALS.name(), duration,  routeTotalDuration);
+        Route route3 = new Route("name", "desc" , Interest.HISTORY.name(), duration,  routeTotalDuration);
 
         ArrayList<Route> routeArrayList = new ArrayList<>();
         routeArrayList.add(route1);
@@ -60,5 +57,17 @@ class RouteServiceTest {
         //Assert
         assertEquals(3, routes.size() );
         Mockito.verify(routeRepository, times(1)).findAll();
+    }
+
+    @Test
+    void getAllRoutesByInterestAndTimeTest(){
+        String interest = Interest.HISTORY.name();
+        int departureTimeInMinutes = 22;
+
+        List<Route> routes = routeService.getAllRoutesByInterestAndTime(interest,departureTimeInMinutes);
+
+        assertEquals(2,routes.size());
+
+
     }
 }

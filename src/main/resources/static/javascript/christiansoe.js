@@ -115,15 +115,14 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
         measuredDistance()
     }
 
-    // Tjek om der er hul igennem til geolocation
-    if ('geolocation' in navigator){
-       //console.log('geolocation is available')
-       // setInterval(function (){
-            navigator.geolocation.getCurrentPosition(position => {
-                console.log(position)
-                L.marker([position.coords.latitude, position.coords.longitude], {icon: userIcon}).addTo(map).bindTooltip("You");
-            })
-       // }, 1000)
+// Tjek om der er hul igennem til geolocation
+if ('geolocation' in navigator) {
+    //console.log('geolocation is available')
+    // setInterval(function (){
+    navigator.geolocation.getCurrentPosition(position => {
+        L.marker([position.coords.latitude, position.coords.longitude], {icon: userIcon}).addTo(map).bindTooltip("You");
+    })
+    // }, 1000)
 
     } else{
         console.log('geolocation is not available')
@@ -141,6 +140,12 @@ function makeAttractionRows(map) {
            <td><img src="${att.photo}" style="max-width: 200px"></td>
          </tr>
         `)
+    let headerRows = ` <tr>
+                    <th>Attraction name</th>
+                    <th>Info</th>
+                    <th>Picture</th>
+                    </tr>`
+    document.getElementById("table-head").innerHTML = headerRows
     document.getElementById("attraction-table-body").innerHTML = rows.join("")
 }
 
@@ -151,19 +156,20 @@ function makeAttractionRows(map) {
 //Finding the right attractions to show, due to what location the user press on + showing the modal when the user press a location in the map
 function clickLocationHandler(event) {
     let locationId = event.target.myVeryOwnId
-    let obj = locations.find(arr => arr.locationID === locationId)
-    let specificAttractionsList = obj.attractionList
+    let clickedLocation = locations.find(arr => arr.locationID === locationId)
+    let specificAttractionsList = clickedLocation.attractionList
 
     makeAttractionRows(specificAttractionsList)
-    //attractionModal.show()
-    showModal(locationId,specificAttractionsList)
+    showModal(locationId)
 }
 
-    //Method that shows the modal
-function showModal(locationId, attractionList) {
+//Method that shows the modal
+function showModal(locationId) {
     const modal = document.getElementById("myModal");
     let span = document.getElementsByClassName("close")[0];
-    document.getElementById("modal-title").innerText = locations[locationId-1].name
+    if(locationId!=null){
+        document.getElementById("modal-title").innerText = locations[locationId - 1].name
+    }
 
     modal.style.display = "block";
 
@@ -177,7 +183,7 @@ function showModal(locationId, attractionList) {
         }
     }
 
-    document.getElementById("btn-close").onclick = (e) =>{
+    document.getElementById("btn-close").onclick = (e) => {
         modal.style.display = "none";
     }
 }
@@ -203,8 +209,9 @@ fetchRoutes()
 
 setUpHandlers()
 
-function getPossibleRoutes() {
-
+function getPossibleRoutes(evt) {
+    evt.preventDefault()
+    evt.stopPropagation()
     routes = {}
     let userInterest = document.getElementById("interests").value
     let userDepatureTime = document.getElementById("depature").value
@@ -215,8 +222,28 @@ function getPossibleRoutes() {
     fetch(url)
         .then(res => res.json())
         .then(routes => {
-            console.log(routes)
+            makeRoutesRows(routes)
+            showModal()
         })
+}
+
+function makeRoutesRows(routes) {
+    const rows = routes.map(route => `
+         <tr>
+           <td>${route.name}</td>
+           <td>${route.interest}</td>
+           <td>${route.routeLength}</td>
+           <td>${route.timeDuration}</td>
+         </tr>
+        `)
+    let headerRows = ` <tr>
+                    <th>Route Name</th>
+                    <th>Route interest</th>
+                    <th>Route length</th>
+                    <th>Route TimeDuration</th>
+                    </tr>`
+    document.getElementById("attraction-table-body").innerHTML = rows.join("")
+    document.getElementById("table-head").innerHTML = headerRows
 }
 
     function createAttraction(){
