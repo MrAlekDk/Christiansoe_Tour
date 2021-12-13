@@ -35,6 +35,16 @@ public class Route {
 
     //private List<Activity> routeActivities;
 
+    public Route(){}
+
+    public Route(String name, String description, String interest, int timeDuration, Double routeLength) {
+        this.name = name;
+        this.description = description;
+        this.interest = interest;
+        this.timeDuration = Duration.ofMinutes(timeDuration);
+        this.routeLength = routeLength;
+    }
+
     public Route(String name, String description, String interest, Duration timeDuration, Double routeLength) {
         this.name = name;
         this.description = description;
@@ -42,7 +52,7 @@ public class Route {
         this.timeDuration = timeDuration;
         this.routeLength = routeLength;
     }
-    public Route(){}
+
 
     public int getRouteId() {
         return routeId;

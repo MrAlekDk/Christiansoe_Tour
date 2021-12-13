@@ -24,7 +24,7 @@
 <section class="top-container">
     <section class="left-box">
         <section class="input-field">
-            <form method="post">
+            <form>
                 <label for="interests">Choose an interest:</label>
                 <select id="interests" name="interests">
                     <option value="Nature">Nature</option>
@@ -60,12 +60,7 @@
         <h5 id="modal-title"></h5>
         <div class="table-holding-rows" style="height: 400px; overflow-y: scroll; ">
             <table class="table">
-                <thead class="table-head">
-                <tr>
-                    <th>Attraction name</th>
-                    <th>Info</th>
-                    <th>Picture</th>
-                </tr>
+                <thead class="table-head" id="table-head">
                 </thead>
                 <tbody id = "attraction-table-body">
                 </tbody>

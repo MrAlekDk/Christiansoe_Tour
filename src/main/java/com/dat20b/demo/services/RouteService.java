@@ -21,4 +21,11 @@ public class RouteService {
         routeRepository.findAll().forEach(allRoutes::add);
         return allRoutes;
     }
+
+
+    public List<Route> getAllRoutesByInterestAndTime(String interest, int depatureTime) {
+        List<Route> allRoutes = new ArrayList<>();
+        routeRepository.findAll().forEach(allRoutes::add);
+        return Sort.sortRoutesByInterestAndDepartureTime(allRoutes, interest, depatureTime);
+    }
 }

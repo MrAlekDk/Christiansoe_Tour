@@ -7,34 +7,34 @@ const attribution =
 
 <!-- Tilføje tiles til vores map -->
 const tileURL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const tiles = L.tileLayer(tileURL, { attribution });
+const tiles = L.tileLayer(tileURL, {attribution});
 tiles.addTo(map);
 
 <!-- Icons til markers -->
 var shipIcon = L.icon({
     iconUrl: "https://www.freeiconspng.com/uploads/ship-travel-cruise-tourism-travel-icon-png-ship-png-ship-icon-29.png",
-    iconSize: [50,32],
-    iconAnchor: [25,16]
+    iconSize: [50, 32],
+    iconAnchor: [25, 16]
 });
 
 var userIcon = L.icon({
     iconUrl: "https://www.freeiconspng.com/uploads/person-icon-person-icon-clipart-image-from-our-icon-clipart-category--9.png",
-    iconSize: [40,40],
-    iconAnchor: [25,16]
+    iconSize: [40, 40],
+    iconAnchor: [25, 16]
 });
 
 <!-- Tilføje markers til kortet -->
 const ship = L.marker([55.32073, 15.18600], {icon: shipIcon}).addTo(map).bindTooltip("Ship");
 const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindTooltip("You");
 
-    <!-- Måle afstanden fra brugeren til skibet med leaflet -->
-    function measuredDistance(){
-        distance = user.getLatLng().distanceTo(ship.getLatLng());
-        document.getElementById("distance").innerHTML = distance.toFixed(0) + " Meter";
-    }
+<!-- Måle afstanden fra brugeren til skibet med leaflet -->
+function measuredDistance() {
+    distance = user.getLatLng().distanceTo(ship.getLatLng());
+    document.getElementById("distance").innerHTML = distance.toFixed(0) + " Meter";
+}
 
-    <!-- Timer -->
-    document.getElementById("startButton").onclick = (e) => {
+<!-- Timer -->
+document.getElementById("startButton").onclick = (e) => {
     <!-- Opret dato for idag med den indtastede afgangstid -->
     let departTime = document.getElementById("depature").valueAsDate;
     let date = new Date()
@@ -78,92 +78,97 @@ const user = L.marker([55.3230, 15.1880], {icon: userIcon}).addTo(map).bindToolt
     }, 1000);
 }
 
-    //fetch locations
-    const URL = "http://localhost:8080/lokationer";
-    let locations = []
+//fetch locations
+const URL = "http://localhost:8080/lokationer";
+let locations = []
 
-    function fetchLocations() {
-        fetch(URL)
-            .then(res => res.json())
-            .then(data=> {
-                locations = data
-                createMarkers()
-                setUserLocation(user, locations[4])
-                console.log(data);
-            })
+function fetchLocations() {
+    fetch(URL)
+        .then(res => res.json())
+        .then(data => {
+            locations = data
+            createMarkers()
+            setUserLocation(user, locations[4])
+        })
+}
+
+fetchLocations()
+
+
+// Tilføje markers til kortet
+function createMarkers() {
+    let markers = locations
+    for (let i = 0; i < markers.length; i++) {
+        let x = markers[i].coordinates.x;
+        let y = markers[i].coordinates.y;
+        let name = markers[i].name;
+        let id = markers[i].locationID;
+
+        let marker = L.marker([x, y]).on('click', clickLocationHandler).addTo(map).bindTooltip(name)
+        marker.myVeryOwnId = id
     }
+}
 
-    fetchLocations()
+// Set test brugers lokation
+function setUserLocation(user, location) {
+    user.setLatLng([location.coordinates.x, location.coordinates.y])
+    measuredDistance()
+}
 
-    // Tilføje markers til kortet
+// Tjek om der er hul igennem til geolocation
+if ('geolocation' in navigator) {
+    //console.log('geolocation is available')
+    // setInterval(function (){
+    navigator.geolocation.getCurrentPosition(position => {
+        L.marker([position.coords.latitude, position.coords.longitude], {icon: userIcon}).addTo(map).bindTooltip("You");
+    })
+    // }, 1000)
 
-    function createMarkers(){
-        let markers = locations
-        for (let i = 0; i < markers.length; i++) {
-            let x = markers[i].coordinates.x;
-            let y = markers[i].coordinates.y;
-            let name = markers[i].name;
-            let id = markers[i].locationID;
-
-            let marker = L.marker([x , y]).on('click', clickLocationHandler).addTo(map).bindTooltip(name)
-            marker.myVeryOwnId = id
-        }
-    }
-    // Set test brugers lokation
-    function setUserLocation(user, location){
-        user.setLatLng([location.coordinates.x, location.coordinates.y])
-        measuredDistance()
-    }
-
-    // Tjek om der er hul igennem til geolocation
-    if ('geolocation' in navigator){
-       //console.log('geolocation is available')
-       // setInterval(function (){
-            navigator.geolocation.getCurrentPosition(position => {
-                console.log(position)
-                L.marker([position.coords.latitude, position.coords.longitude], {icon: userIcon}).addTo(map).bindTooltip("You");
-            })
-       // }, 1000)
-
-    } else{
-        console.log('geolocation is not available')
-    }
+} else {
+    console.log('geolocation is not available')
+}
 
     //Making a modal out of HTML element
-    const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
 
 //tell the modal where to put the data and what data (tell HTML)
 function makeAttractionRows(map) {
     const rows = map.map(att => `
          <tr>
            <td>${att.name}</td>
-           <td>${att.description.slice(0,90) + "..."}</td>
+           <td>${att.description.slice(0, 90) + "..."}</td>
            <td><img src="${att.photo}" style="max-width: 200px"></td>
          </tr>
         `)
+    let headerRows = ` <tr>
+                    <th>Attraction name</th>
+                    <th>Info</th>
+                    <th>Picture</th>
+                    </tr>`
+    document.getElementById("table-head").innerHTML = headerRows
     document.getElementById("attraction-table-body").innerHTML = rows.join("")
 }
 
 
-    //Making a modal out of HTML element
-    //const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
+//Making a modal out of HTML element
+//const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
 
 //Finding the right attractions to show, due to what location the user press on + showing the modal when the user press a location in the map
 function clickLocationHandler(event) {
     let locationId = event.target.myVeryOwnId
-    let obj = locations.find(arr => arr.locationID === locationId)
-    let specificAttractionsList = obj.attractionList
+    let clickedLocation = locations.find(arr => arr.locationID === locationId)
+    let specificAttractionsList = clickedLocation.attractionList
 
     makeAttractionRows(specificAttractionsList)
-    //attractionModal.show()
-    showModal(locationId,specificAttractionsList)
+    showModal(locationId)
 }
 
-    //Method that shows the modal
-function showModal(locationId, attractionList) {
+//Method that shows the modal
+function showModal(locationId) {
     const modal = document.getElementById("myModal");
     let span = document.getElementsByClassName("close")[0];
-    document.getElementById("modal-title").innerText = locations[locationId-1].name
+    if(locationId!=null){
+        document.getElementById("modal-title").innerText = locations[locationId - 1].name
+    }
 
     modal.style.display = "block";
 
@@ -177,7 +182,7 @@ function showModal(locationId, attractionList) {
         }
     }
 
-    document.getElementById("btn-close").onclick = (e) =>{
+    document.getElementById("btn-close").onclick = (e) => {
         modal.style.display = "none";
     }
 }
@@ -203,8 +208,9 @@ fetchRoutes()
 
 setUpHandlers()
 
-function getPossibleRoutes() {
-
+function getPossibleRoutes(evt) {
+    evt.preventDefault()
+    evt.stopPropagation()
     routes = {}
     let userInterest = document.getElementById("interests").value
     let userDepatureTime = document.getElementById("depature").value
@@ -215,8 +221,28 @@ function getPossibleRoutes() {
     fetch(url)
         .then(res => res.json())
         .then(routes => {
-            console.log(routes)
+            makeRoutesRows(routes)
+            showModal()
         })
+}
+
+function makeRoutesRows(routes) {
+    const rows = routes.map(route => `
+         <tr>
+           <td>${route.name}</td>
+           <td>${route.interest}</td>
+           <td>${route.routeLength}</td>
+           <td>${route.timeDuration}</td>
+         </tr>
+        `)
+    let headerRows = ` <tr>
+                    <th>Route Name</th>
+                    <th>Route interest</th>
+                    <th>Route length</th>
+                    <th>Route TimeDuration</th>
+                    </tr>`
+    document.getElementById("attraction-table-body").innerHTML = rows.join("")
+    document.getElementById("table-head").innerHTML = headerRows
 }
 
 

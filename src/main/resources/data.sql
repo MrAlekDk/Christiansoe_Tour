@@ -85,10 +85,14 @@ Baggrunden var, at der med Store Tårns restaurering var behov for et rådgivend
 10, '2021-05-06', '2021-09-02', 'https://www.christiansoe.dk/wp-content/uploads/2018/12/hestehytten-1024x680.jpg', '/test/path/sound', 4),
 (30,'Tag en dukkert', 'Har du badetøj med? Så vil vi anbefale en tur forbi christiansøs badebro.', 20, '2021-05-06', '2021-09-02', 'http://1.bp.blogspot.com/-TcN9HM_asSA/Uk7BPwFQa-I/AAAAAAAAAU4/YTU7amtm4T0/s1600/badebro.jpg', '/test/path/sound', 12);
 
-INSERT INTO ROUTES(id,name,description,timeD,routeLength)
-VALUES(1,'Test rute','En lille test rute',10,10.0);
+INSERT INTO ROUTES(id,name,description,interest,timeD,routeLength)
+VALUES(1,'Historie ruten','Få et indblik i Christiansøs spændende historie','HISTORY',10,10.0),
+(2,'Dyre ruten','Ruten for dig som elsker dyr og at se dem i deres egen natur','ANIMALS',15,20);
 
 INSERT INTO route_locations
 VALUES(1,1),
 (2,1),
-(3,1);
+(3,1),
+(3,2),
+(5,2),
+(4,2);
