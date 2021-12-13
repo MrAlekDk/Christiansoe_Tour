@@ -1,0 +1,24 @@
+.admin-boxes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.box{
+    flex-direction: row;
+    justify-content: center;
+    align-content: start;
+    background: white;
+    width: 32%;
+    height: 1000px;
+}
+
+h2{
+    font-family: "Malgun Gothic Semilight";
+    font-size: 45px;
+    color: black;
+    opacity: 90%;
+    text-align: center;
+    justify-content: center;
+    border: solid 2px black;
+}

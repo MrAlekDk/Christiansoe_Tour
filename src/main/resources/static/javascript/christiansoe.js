@@ -261,7 +261,7 @@ function makeRoutesRows(routes) {
         fetch(URL2, options)
             .then(attraction => {
                 //Gem attraction
-
+                fetchLocations()
             })
     }
 
