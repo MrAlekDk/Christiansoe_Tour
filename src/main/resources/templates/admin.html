@@ -5,6 +5,7 @@
     <title>Admin Page</title>
     <link th:href="@{/styles/standardStyles.css}" rel="stylesheet">
     <link th:href="@{/styles/adminStyle.css}" rel="stylesheet">
+    <script src="../javascript/admin.js" defer></script>
 </head>
 <body>
 <section class="header">
@@ -16,7 +17,15 @@
         <div class="form">
             <button id="create-attraction">Create new Attraction</button>
         </div>
-        <div class="attraction-list"></div>
+        <div class="attraction-list">
+            <div class="table-holding-rows" style="height: 400px; overflow-y: scroll; ">
+            <table class="table">
+                <thead class="table-head" id="table-head-attraction">
+                </thead>
+                <tbody id = "attraction-table-body">
+                </tbody>
+            </table>
+        </div></div>
     </section>
     <section class="box">
         <h2>Routes</h2>
