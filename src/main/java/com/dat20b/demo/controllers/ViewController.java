@@ -12,4 +12,9 @@ public class ViewController {
         return "christiansoetour.html";
     }
 
+    @GetMapping("/admin")
+    public String getChristiansoeAdminPage(){
+        return "admin.html";
+    }
+
 }
