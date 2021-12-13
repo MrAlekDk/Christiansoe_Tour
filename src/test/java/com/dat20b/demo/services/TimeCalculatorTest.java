@@ -71,37 +71,38 @@ class TimeCalculatorTest {
 
         //Act//
 
-        // Calculating location duration - if route only had one location.
+        // Calculating location duration with TimeCalculator.
         Duration calDuration = TimeCalculator.getLocationDuration(allAttractions);
         routeTest.setTimeDuration(calDuration);
 
-        // Calculating route duration
-
-
         //Assert//
 
-        // Testing location duration
+        // Testing location duration. 36000 is gained by adding the duration from all attractions.
         assertEquals(Duration.ofSeconds(36000).getSeconds(), routeTest.getTimeDuration().getSeconds());
     }
 
     @Test
     public void calculateRouteDuration() {
         //Assign//
-
+        // Create Route and Location
         Route routeTest = new Route("History","A description", Interest.HISTORY.name(), duration,  routeLength);
         Location testLocation = allLocations.get(0);
 
         //Act//
-
+        // Give Attractions to the Location
         testLocation.setAttractionList(allAttractions);
+        // And then add the locations to testRoute
         routeTest.setLocations(allLocations);
+        // Calculating Route duration with TimeCalculator.
         Duration calDuration1 = TimeCalculator.getRouteDuration(routeTest.getLocations());
         routeTest.setTimeDuration(calDuration1);
 
         //Assert//
 
         // Testing location duration
+        // Walking speed times distance in meters
         assertEquals(753.6, 1.2*628);
+        //  36000 is gained by adding the duration from all attractions, and 753 is the time walking between locations.
         assertEquals(Duration.ofSeconds(36753).getSeconds(), routeTest.getTimeDuration().getSeconds());
     }
 
