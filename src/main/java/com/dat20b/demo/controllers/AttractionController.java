@@ -1,7 +1,6 @@
 package com.dat20b.demo.controllers;
 
 import com.dat20b.demo.model.Attraction;
-import com.dat20b.demo.model.Location;
 import com.dat20b.demo.services.AttractionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +26,7 @@ public class AttractionController {
     }
 
     @PostMapping("/{location}")
-    public ResponseEntity<Attraction> createAttraction(@RequestBody Attraction newAttraction, @PathVariable("location") Integer locationId){
+    public ResponseEntity<Object> createAttraction(@RequestBody Attraction newAttraction, @PathVariable("location") Integer locationId){
         attractionService.addAttraction(newAttraction, locationId);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

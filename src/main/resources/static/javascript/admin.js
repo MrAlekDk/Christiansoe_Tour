@@ -47,12 +47,13 @@ function createAttraction(evt){
     const URL2 ='http://localhost:8080/seværdigheder'
     attraction.name = document.getElementById("name").value
     attraction.description = document.getElementById("desc").value
-    //attraction.time = document.getElementById("time").value
-    attraction.startDate = document.getElementById("start").value
-    attraction.endDate = document.getElementById("end").value
-    attraction.picture = document.getElementById("pic").value
+    attraction.time = document.getElementById("time").value
+    attraction.activeSeasonStart = document.getElementById("start").value
+    attraction.activeSeasonEnd = document.getElementById("end").value
+    attraction.photo = document.getElementById("pic").value
     attraction.sound = document.getElementById("sound").value
-    location = document.getElementById("location").value
+    let idValue = document.getElementById("location").value
+    console.log(idValue)
     const options = {
         method: 'POST',
         headers: {
@@ -61,9 +62,10 @@ function createAttraction(evt){
         },
         body: JSON.stringify(attraction)
     };
-    fetch(URL1 + "/" + location, options)
+    fetch(URL1 + "/" + idValue, options)
         .then(attraction => {
             fetchLocations()
+            console.log(attraction)
             // remove create attraction modal
         }).catch(e => alert(e))
 }

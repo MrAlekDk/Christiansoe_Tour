@@ -129,7 +129,6 @@ if ('geolocation' in navigator) {
     }
 
     //Making a modal out of HTML element
-    const attractionModal = new bootstrap.Modal(document.getElementById('attraction-modal'))
 
 //tell the modal where to put the data and what data (tell HTML)
 function makeAttractionRows(map) {

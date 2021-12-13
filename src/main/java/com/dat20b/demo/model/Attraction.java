@@ -95,9 +95,9 @@ public class Attraction {
         return Duration.ofMinutes(time);
     }
 
-    public void setTime(Duration time) {
+    /*public void setTime(Duration time) {
         this.time = (int) time.toMinutes();
-    }
+    }*/
 
     public LocalDate getActiveSeasonStart() {
         return activeSeasonStart;
